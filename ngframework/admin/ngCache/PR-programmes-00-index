@@ -1,0 +1,38 @@
+<div class="" id="contentSite">
+<?php
+
+echo NgGadget::factory("header", array("active"=>"1"))->display();
+?>
+<div style="position: relative; margin-top: 30px;">
+<?php
+
+if (count($productListInfo)>0) {
+?>
+
+<?php
+
+foreach ($productListInfo as $bienItem->index => $bienItem->current) {
+?>
+
+<?php
+
+echo NgGadget::factory("bienimmo", array("valueBien"=>$bienItem->current))->display();
+?>
+
+<?php
+
+}
+
+?>
+
+<?php
+
+}else{
+?>
+<center>Aucun r&eacute;sultat</center>
+<?php
+
+}
+
+?>
+</div></div>

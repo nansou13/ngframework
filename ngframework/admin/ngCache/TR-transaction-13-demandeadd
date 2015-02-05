@@ -1,0 +1,57 @@
+<script src="/data/ckeditor/ckeditor.js"></script><div id="panelAdmin">
+<?php
+
+echo NgGadget::factory("adminMenu")->display();
+?>
+<div class="widget stacked"><div class="widget-header"><i class="icon-bookmark"></i><h3>Administration</h3></div><div class="step2"><form method="POST" id="formStep2"><div class="widget-content"><div class="stepDesc"><fieldset><div class="col-sm-4"><div class="box"><div class="lead"><i class="icon-info-sign text-contrast"></i>
+                                                Information sur la demande
+                                            </div><small class="text-muted">Veuillez renseigner toutes les informations de la demande.</small></div></div><div class="col-sm-7 col-sm-offset-1"><input type="hidden" class="form-control" value="<?php echo $productInfo->id;?>" name="mandat2" id="mandat2"/><div class="form-group"><label>N&deg; de demande :</label><input type="text" class="form-control" value="<?php echo $productInfo->mandat;?>" name="mandat" id="mandat"/></div><div class="form-group"><label>Titre / type :</label><input type="text" class="form-control" value="<?php echo $productInfo->titre;?>" name="titre" id="titre"/></div><div class="form-group"><label>localisation mini :</label><input type="text" class="form-control" value="<?php echo $productInfo->localisation_mini;?>" name="localisation_mini" id="localisation_mini"/></div><div class="form-group"><label>localisation max :</label><textarea class="form-control ckeditor" name="localisation_maxi" id="localisation_maxi" placeholder="Renseignez les informations qui s'afficheront dans la fiche du produit" rows="4"><?php echo $productInfo->localisation_maxi;?></textarea></div><div class="form-group"><label>Budget :</label><div class="row"><div class="col-sm-6 col-md-6 col-lg-9"><div class="input-group"><span class="input-group-addon">
+                                                            &euro;
+                                                        </span><input type="text" class="form-control input-lg text-right" name="budget" id="budget" value="<?php echo $productInfo->budget;?>"/></div></div></div></div><div class="form-group"><label>Detail :</label><textarea class="form-control ckeditor" name="detail" id="detail" placeholder="Renseignez les informations qui s'afficheront dans la fiche du produit" rows="4"><?php echo $productInfo->detail;?></textarea></div>
+<?php
+
+if ((is_array($options) || ($options instanceOf ArrayAccess)) && count($options) > 0) {
+$categoption = new Iterrator($options);
+
+foreach ($options as $categoption->index => $categoption->current) {
+?>
+<div class="form-group"><label><?php echo $categoption->index;?> :</label><div>
+<?php
+
+if ((is_array($categoption->current) || ($categoption->current instanceOf ArrayAccess)) && count($categoption->current) > 0) {
+$option = new Iterrator($categoption->current);
+
+foreach ($categoption->current as $option->index => $option->current) {
+?>
+<div class="optionC <?php echo $categoption->index;?>"><img src="http://transaction.immextenso.fr/LD/IM/globals/demande/<?php echo $categoption->index;?>_<?php echo $option->index;?>.png"/>
+<?php
+
+if (isset($arrayOptionForm[$categoption->index.'_'.$option->index])) {
+?>
+<input type="checkbox" name="<?php echo $categoption->index;?>_<?php echo $option->index;?>" checked="checked" id="<?php echo $categoption->index;?>_<?php echo $option->index;?>"/>
+<?php
+
+}else{
+?>
+<input type="checkbox" name="<?php echo $categoption->index;?>_<?php echo $option->index;?>" id="<?php echo $categoption->index;?>_<?php echo $option->index;?>"/>
+<?php
+
+}
+
+?>
+</div>
+<?php
+
+}}
+
+?>
+</div></div>
+<?php
+
+}}
+
+?>
+</div></fieldset></div><div class="form-actions"><div class="row"><div class="col-sm-7 col-sm-offset-5"><div class="btn btn-primary btn-lg"><i class="icon-save"></i>
+                                            Save
+                                        </div></div></div></div></div></form></div><div class="step3"><div class="widget-content"><fieldset><i class="icon-ok-sign"></i>
+                            Modification effectu&eacute;e<br/><a href="/transaction/demande/" style="font-size: 14px;">retour au listing</a></fieldset></div></div></div></div><div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button><h4 class="modal-title" id="myModalLabel">Organiser les photos</h4></div><div class="modal-body"><table id="manageimgarray" class="table table-striped"><thead><tr><th>#</th><th>Image</th></tr></thead><tbody></tbody></table></div><div class="modal-footer"><button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button></div></div></div></div>

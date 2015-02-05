@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<document xmlns="http://www.w3.org/1999/xhtml" xmlns:ng="http://www.gigan.fr/" lang="fr" xml:lang="fr">
+    <body>
+		<div id="panelAdmin">
+			<ng:adminMenu/>
+			<div class="widget stacked">
+				<div class="widget-header">
+					<i class="icon-bookmark"></i>
+					<h3>Administration</h3>
+				</div> <!-- /widget-header -->
+				<div class="step1">
+					<div class="widget-content">
+						<fieldset>
+							<div class="col-sm-4">
+								<div class="box">
+									<div class="lead">
+										<i class="icon-info-sign text-contrast"></i>
+										Information de l'article
+									</div>
+									<small class="text-muted"></small>
+								</div>
+							</div>
+							<div class="col-sm-7 col-sm-offset-1">
+								<div class="form-group">
+									<label>Titre :</label>
+									<input type="text" class="form-control" name="title" id="title"/>
+								</div>
+							</div>
+						</fieldset>
+						<div class="form-actions">
+							<div class="row">
+								<div class="col-sm-7 col-sm-offset-5">
+									<div class="btn btn-primary btn-lg">
+										<i class="icon-save"></i>
+										Save
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</document>

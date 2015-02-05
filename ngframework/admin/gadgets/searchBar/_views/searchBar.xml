@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<document xmlns="http://www.w3.org/1999/xhtml" xmlns:ng="http://www.gigan.fr/" lang="fr" xml:lang="fr">  
+
+	<div class="searchBar" style="background-color: rgb(51, 51, 51); margin-top: 20px; height: 123px; padding-top: 15px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -o-border-radius: 4px; border-radius: 4px; -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.2); -moz-box-shadow: 0 1px 4px rgba(0,0,0,.2); -o-box-shadow: 0 1px 4px rgba(0,0,0,.2); box-shadow: 0 1px 4px rgba(0,0,0,.2);">
+		<form action="/listing" method="GET">
+			<div>
+				<div class="form-group">
+					<label>Localisation :</label>
+					<div class="contentform">
+						<select class="form-control" name="type" id="localisation">
+							<option value="">Tous</option>
+							<option value="Appartement">Appartement</option>
+							<option value="Maison">Maison</option>
+							<option value="Terrain">Terrain</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label>Type :</label>
+					<div class="contentform">
+						<select class="form-control" name="localisation" id="type">
+							<option value="">Tout marseille</option>
+							<option value="13001">Marseille 13001</option>
+							<option value="13002">Marseille 13002</option>
+							<option value="13003">Marseille 13003</option>
+							<option value="13004">Marseille 13004</option>
+							<option value="13005">Marseille 13005</option>
+							<option value="13006">Marseille 13006</option>
+							<option value="13007">Marseille 13007</option>
+							<option value="13008">Marseille 13008</option>
+							<option value="13009">Marseille 13009</option>
+							<option value="13010">Marseille 13010</option>
+							<option value="13011">Marseille 13011</option>
+							<option value="13012">Marseille 13012</option>
+							<option value="13013">Marseille 13013</option>
+							<option value="13014">Marseille 13014</option>
+							<option value="13015">Marseille 13015</option>
+							<option value="13016">Marseille 13016</option>
+
+						</select>
+					</div>
+				</div>
+			</div>
+			<div>
+				<div class="form-group">
+					<label>Prix entre :</label>
+					<div class="contentform">
+						<input type="text" class="form-control selectinput" name="prixmin" id="prixmin"/>
+						<span>et</span>
+						<input type="text" class="form-control selectinput" name="prixmax" id="prixmax"/>
+					</div>
+				</div>
+				<div class="form-group">
+					<label>Surface entre :</label>
+					<div class="contentform">
+						<input type="text" class="form-control selectinput" name="surfacemin" id="surfacemin"/>
+						<span>et</span>
+						<input type="text" class="form-control selectinput" name="surfacemax" id="surfacemax"/>
+					</div>
+				</div>
+
+			</div>
+			<div>
+				<div class="form-group">
+					<label>Pi&amp;eacute;ce entre :</label>
+					<div class="contentform">
+						<input type="text" class="form-control selectinput" name="piecemin" id="piecemin"/>
+						<span>et</span>
+						<input type="text" class="form-control selectinput" name="piecemax" id="piecemax"/>
+					</div>
+				</div>
+				<div class="form-group" style='text-align: right;'>
+					<input type="hidden" name="search"/>
+					<input class="btn btn-default" style="text-align: center;" type="submit" value="Lancer la recherche"/>
+				</div>
+
+			</div>
+		</form>
+	</div>
+
+
+
+
+
+
+</document>

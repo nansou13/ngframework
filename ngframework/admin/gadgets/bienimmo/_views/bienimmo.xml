@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<document xmlns="http://www.w3.org/1999/xhtml" xmlns:ng="http://www.gigan.fr/" lang="fr" xml:lang="fr">  
+
+	<div class="productlisting">
+<h4 style="color: #558C8A;text-align: center;">{$valueBien->nom}</h4>
+		<div class="imgpl">
+<ng:if value="{$valueBien->online==0}"> 
+<img width="280" height="142" src="/LD/IM/globals/livre.png" style="position: absolute;"/>
+</ng:if> 
+<a href="/programmes/detail/{$valueBien->id}/{$valueBien->urltext}.html"><img width="280" height="142" src="/LD/IM/globals/neufimg/{$valueBien->id}/01.jpg" /></a></div>
+		
+<div style="background-color: #D0D8DF;padding: 20px;margin-top: 8px;">
+<ng:if value="{$valueBien->online==1}"> 
+
+		<div class="" style="height: 27px;line-height: 27px;vertical-align: middle;">
+	<img src="/LD/IM/globals/localisation1.png" style="float: left;margin-right: 10px;width: 15px;"/>
+	{$valueBien->ville} - {$valueBien->quartier}
+</div>
+<div style="margin-top:5px; height: 22px; line-height: 22px; vertical-align: middle;">
+	<img src="/LD/IM/globals/cle.png" style="width: 20px; float: left; margin-right: 6px;"/> {$valueBien->date_livraison}
+</div>
+<div style="margin-top:5px; height: 23px; line-height: 23px; vertical-align: middle;">
+	<img src="/LD/IM/globals/maison.png" style="width: 20px; float: left; margin-right: 6px;"/>
+	{$valueBien->nbre_lot} Appartements restants</div>
+										
+<div style="margin-top:5px; height: 19px; line-height: 19px; vertical-align: middle;">
+	<img src="/LD/IM/globals/apn.png" style="width: 22px; float: left; margin-right: 6px;"/>
+	+ d'images
+</div>
+										
+<div style="font-size: 17px;font-weight: bold;height: 27px;line-height: 27px;vertical-align: middle;"><img src="/LD/IM/globals/euro.png" style="width: 20px; float: left; margin-right: 6px;"/>A partir de : {$valueBien->prix} &amp;euro;</div>
+
+<div style="margin-top: 15px; text-align: center;"><a class="btnbienimmo" href="/programmes/detail/{$valueBien->id}/{$valueBien->urltext}.html">+ de detail</a></div>
+
+<ng:else/>
+<div class="" style="height: 165px;line-height: 27px;vertical-align: middle;">
+	<img src="/LD/IM/globals/exclam.jpg" style="float: left;margin-right: 10px;width: 15px;"/>
+	Programme livr&amp;eacute;
+</div>
+
+
+</ng:if> 	
+
+
+</div>
+
+	
+	</div>
+
+
+
+
+
+
+</document>

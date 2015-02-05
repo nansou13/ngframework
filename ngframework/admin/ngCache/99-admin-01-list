@@ -1,0 +1,19 @@
+<div id="panelAdmin">
+<?php
+
+echo NgGadget::factory("adminMenu")->display();
+?>
+<a href="/admin/add/" style="vertical-align: top; margin-right: 10px;"><button style="margin-bottom:5px" class="btn btn-primary"><i class="icon-plus"></i>
+					Ajouter
+				</button></a><div class="widget stacked"><div class="widget-header"><i class="icon-bookmark"></i><h3>Liste des mandats</h3></div><div class="widget-content"><fieldset><table class="greyColor table table-bordered table-striped table-highlight dataTableInit"><thead><tr><th>#</th><th>Nom</th><th>Ville</th><th>Quartier</th><th>Date de livraison</th><th>Promoteur</th><th>Voir</th><th>Modifier</th><th>Supprimer</th></tr></thead><tbody>
+<?php
+
+foreach ($productList as $product->index => $product->current) {
+?>
+<tr><td><img src="/LD/IM/globals/neufimg/<?php echo $product->current->id;?>/mini/01.jpg" width="50" height="50"/></td><td><?php echo $product->current->nom;?></td><td><?php echo $product->current->ville;?></td><td><?php echo $product->current->quartier;?></td><td><?php echo $product->current->date_livraison;?></td><td><?php echo $product->current->promoteur;?></td><td><a href="/programmes/detail/<?php echo $product->current->id;?>/<?php echo $product->current->urltext;?>.html" target="_blank"><i class="icon-eye-open"></i></a></td><td><a href="/admin/edit/<?php echo $product->current->id;?>"><i class="icon-pencil"></i></a></td><td><a href="/admin/delete/<?php echo $product->current->id;?>"><i class="icon-trash"></i></a></td></tr>
+<?php
+
+}
+
+?>
+</tbody></table></fieldset></div></div></div>

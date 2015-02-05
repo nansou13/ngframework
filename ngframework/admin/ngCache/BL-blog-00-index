@@ -1,0 +1,34 @@
+<script src="/data/ckeditor/ckeditor.js"></script><div class="ombre" id="contentSite">
+<?php
+
+echo NgGadget::factory("blogheader")->display();
+?>
+<div id="blockPrincBlog"><div class="leftPartBlog"><div style="position: relative; margin-top: 30px;">
+<?php
+
+foreach ($listBlog as $topic->index => $topic->current) {
+?>
+<div class="topic"><div class="pTopic"><img src="/LD/IM/globals/03.jpg"/></div><div class="tdTopic"><div class="tTopic"><?php echo $topic->current->title;?></div><div class="dTopic"><?php echo $topic->current->content;?></div></div></div>
+<?php
+
+}
+
+?>
+</div></div><div class="rightPartBlog"></div></div><div style="position: relative; margin-top: 30px;margin:auto;width: 185px;"><button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+					Ecrire un message
+				</button></div><div><ul class="toto"><li><div>LeBlog</div><p class="p1">
+                            Que faire d'un renfoncement de mur ?
+
+                        </p><p class="p2">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac interdum odio. Ut sem mi, bibendum vitae tincidunt vel, interdum eu dui. Integer sapien enim, congue a odio id, scelerisque sodales massa. Fusce egestas risus scelerisque sem hendrerit, id auctor augue convallis. 
+                        </p></li><li><div>Derniers avis</div><p class="p1">
+                            Que faire d'un renfoncement de mur ?
+
+                        </p><p class="p2">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac interdum odio. Ut sem mi, bibendum vitae tincidunt vel, interdum eu dui. Integer sapien enim, congue a odio id, scelerisque sodales massa. Fusce egestas risus scelerisque sem hendrerit, id auctor augue convallis. 
+                        </p></li><li><div>Cr&eacute;ez votre alerte email</div><p class="p1">
+                            Que faire d'un renfoncement de mur ?
+
+                        </p><p class="p2">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac interdum odio. Ut sem mi, bibendum vitae tincidunt vel, interdum eu dui. Integer sapien enim, congue a odio id, scelerisque sodales massa. Fusce egestas risus scelerisque sem hendrerit, id auctor augue convallis. 
+                        </p></li></ul></div></div><div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel">Blabla</h4></div><div class="modal-body"><div class="form-group"><label>Titre :</label><input type="text" id="title" name="title" class="form-control"/></div><div class="form-group"><label>Exprimez-vous :</label><textarea rows="2" id="description" name="description" class="span8 ckeditor"></textarea></div></div><div class="modal-footer"><button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button><button type="button" id="SaveBlog" class="btn btn-primary">Enregistrer</button></div></div></div></div>

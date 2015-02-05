@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<document xmlns="http://www.w3.org/1999/xhtml" xmlns:ng="http://www.gigan.fr/" lang="fr" xml:lang="fr">
+    <body>
+		<div id="panelAdmin">
+			<ng:adminMenu/>
+			
+			<a href="/blog/add/" style="vertical-align: top; margin-right: 10px;">
+				<button style="margin-bottom:5px" class="btn btn-primary">
+					<i class="icon-plus"></i>
+					Ajouter
+				</button>
+
+			</a>
+
+			<div class="widget stacked">
+				<div class="widget-header">
+					<i class="icon-bookmark"></i>
+					<h3>Liste des articles</h3>
+				</div>
+				<div class="widget-content">
+					<fieldset>
+						<table class="greyColor table table-bordered table-striped table-highlight dataTableInit">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>Titre</th>
+									<th>Categorie</th>
+									<th>Voir</th>
+									<th>Modifier</th>
+									<th>Supprimer</th>
+								</tr>
+							</thead>
+							<tbody>
+
+								<ng:foreach name="blog" value="{$blogList}">
+									<tr>
+										<td></td>
+										<td>{$blog->current->title}</td>
+										<td>{$blog->current->categorie}</td>
+										<td><a href="http://blog.immextenso.fr/article/detail/{$blog->current->urltext}"><i class="icon-eye-open"></i></a></td>
+										<td><a href="/blog/edit/{$blog->current->id}"><i class="icon-pencil"></i></a></td>
+										<td><a href="/blog/delete/{$blog->current->id}"><i class="icon-trash"></i></a></td>
+									</tr>
+								</ng:foreach>
+							</tbody>
+						</table>
+					</fieldset>
+				</div>
+			</div>
+		</div>
+	</body>
+</document>

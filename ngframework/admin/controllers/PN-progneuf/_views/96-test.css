@@ -1,0 +1,14 @@
+.APNicon{
+	width: 36px;
+	height: 29px;
+	background-image: url('/LD/IM/globals/camera_plan.png');
+	background-size: cover;
+	position: absolute !important;
+	top: 0;
+	left: 0;
+	cursor: move;
+}
+#planModele{
+	position: relative;
+	display: inline-block;
+}

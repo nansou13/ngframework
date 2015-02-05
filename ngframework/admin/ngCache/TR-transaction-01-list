@@ -1,0 +1,37 @@
+<div id="panelAdmin">
+<?php
+
+echo NgGadget::factory("adminMenu")->display();
+?>
+<a href="/transaction/add/" style="vertical-align: top; margin-right: 10px;"><button style="margin-bottom:5px" class="btn btn-primary"><i class="icon-plus"></i>
+					Ajouter
+				</button></a><div class="widget stacked"><div class="widget-header"><i class="icon-bookmark"></i><h3>Liste des mandats</h3></div><div class="widget-content"><fieldset><table class="greyColor table table-bordered table-striped table-highlight dataTableInit"><thead><tr><th>#</th><th>Mandat</th><th>Titre</th><th>Superficie</th><th>pieces</th><th>Prix</th><th>Localisation</th><th>Voir</th><th>Modifier</th><th>Supprimer</th></tr></thead><tbody>
+<?php
+
+if ((is_array($productList) || ($productList instanceOf ArrayAccess)) && count($productList) > 0) {
+$product = new Iterrator($productList);
+
+foreach ($productList as $product->index => $product->current) {
+?>
+<tr><td><img src="http://monagence.immextenso.fr/LD/IM/globals/mandatimg/<?php echo $product->current->mandat;?>/mini/01.jpg" width="50" height="50"/></td><td><?php echo $product->current->mandat;?></td><td class="bold">
+											<?php echo $product->current->title;?>
+											
+<?php
+
+if (!empty($product->current->propnom)) {
+?>
+<div class="infoClient">
+													<?php echo $product->current->propnom;?><br/><?php echo $product->current->propadresse;?><br/><?php echo $product->current->propphone;?>
+												</div>
+<?php
+
+}
+
+?>
+</td><td><?php echo $product->current->superficie;?></td><td><?php echo $product->current->nbrepiece;?></td><td><?php echo $product->current->prix;?></td><td><?php echo $product->current->ville;?></td><td><a href="http://monagence.immextenso.fr/detail/int/<?php echo $product->current->mandat;?>/<?php echo $product->current->urltext;?>.html" target="_blank"><i class="icon-eye-open"></i></a></td><td><a href="/transaction/edit/<?php echo $product->current->mandat;?>"><i class="icon-pencil"></i></a></td><td><a href="/transaction/delete/<?php echo $product->current->mandat;?>"><i class="icon-trash"></i></a></td></tr>
+<?php
+
+}}
+
+?>
+</tbody></table></fieldset></div></div></div>

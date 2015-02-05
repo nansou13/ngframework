@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<document xmlns="http://www.w3.org/1999/xhtml" xmlns:ng="http://www.gigan.fr/" lang="fr" xml:lang="fr">
+    <body>
+		<script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
+		<div>
+			
+		<a name="fb_share" share_url="http://mariage.gigan.fr">share</a>
+						<a name="fb_share" type="box_count" share_url="YOUR_URL">Partager</a>
+<a name="fb_share" type="button_count" share_url="YOUR_URL">Partager</a>
+<a name="fb_share" type="button" share_url="YOUR_URL">Partager</a>
+<a name="fb_share" type="icon_link" share_url="YOUR_URL">Partager</a>
+<a name="fb_share" type="icon" share_url="YOUR_URL"></a>
+						<a share="TOT" name="fb_share" class="fb_share" type="button" share_url="toto">Partager</a> </div>
+		
+
+	</body>
+</document>

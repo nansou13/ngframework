@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<document xmlns="http://www.w3.org/1999/xhtml" xmlns:ng="http://www.gigan.fr/" lang="fr" xml:lang="fr">
+    <body>
+		<div id="panelAdmin">
+			<ng:adminMenu/>
+			
+			<a href="/transaction/demandenew/" style="vertical-align: top; margin-right: 10px;">
+				<button style="margin-bottom:5px" class="btn btn-primary">
+					<i class="icon-plus"></i>
+					Ajouter
+				</button>
+
+			</a>
+			<div class="widget stacked">
+				<div class="widget-header">
+					<i class="icon-bookmark"></i>
+					<h3>Liste des demandes</h3>
+				</div>
+				<div class="widget-content">
+					<fieldset>
+						<table class="greyColor table table-bordered table-striped table-highlight dataTableInit">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>Titre</th>
+									<th>Localisation</th>
+									<th>Budget max</th>
+									<th>Voir</th>
+									<th>Modifier</th>
+									<th>Supprimer</th>
+								</tr>
+							</thead>
+							<tbody>
+
+								<ng:foreach name="demande" value="{$demandeList}">
+									<tr>
+										<td>{$demande->current->id}</td>
+										<td>{$demande->current->titre}</td>
+										<td>{$demande->current->localisation_mini}</td>
+										<td>{$demande->current->budget}</td>
+										<td><a href="http://monagence.immextenso.fr/detail/int/{$demande->current->id}/{$demande->current->urltext}.html" target="_blank"><i class="icon-eye-open"></i></a></td>
+										<td><a href="/transaction/demandeadd/{$demande->current->id}"><i class="icon-pencil"></i></a></td>
+										<td><a href="/transaction/demanderemove/{$demande->current->id}"><i class="icon-trash"></i></a></td>
+									</tr>
+								</ng:foreach>
+							</tbody>
+						</table>
+					</fieldset>
+				</div>
+			</div>
+		</div>
+	</body>
+</document>

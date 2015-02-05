@@ -1,0 +1,25 @@
+<div class="ombre" id="contentSite">
+<?php
+
+echo NgGadget::factory("header", array("active"=>"5"))->display();
+?>
+<div class="titleContentBloc" style="margin-bottom: 20px;"><div class="barreTitle"></div><div class="titleH1"><h1>Qui sommes nous</h1></div></div><div style="margin-top: 20px;">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vel leo hendrerit, egestas risus ac, adipiscing neque. In vestibulum enim lacus, ac ornare lorem ultricies et. Pellentesque tristique tempus augue, id varius velit faucibus ac. Duis vel tortor et enim luctus tempor in at purus. Vivamus nec rutrum arcu, non elementum felis. Nam dui metus, rutrum vitae laoreet a, ullamcorper vitae elit. Nulla facilisi. Donec aliquet augue lorem, ac pretium erat convallis non. Suspendisse non arcu sed sem imperdiet ultrices et vitae eros. Maecenas ipsum erat, sodales eget libero nec, posuere ornare odio. Pellentesque commodo rhoncus lacus in adipiscing. Curabitur elementum tortor vitae blandit imperdiet. Vestibulum laoreet lorem velit, eu scelerisque ligula vulputate vel.
+				<br/><br/>
+				Suspendisse tristique, ante id facilisis accumsan, sapien magna mollis ligula, consectetur dignissim est lorem at diam. Nullam nec fringilla dolor. Aenean in ipsum eget ipsum dapibus volutpat quis nec enim. Aenean placerat dolor vel vehicula ornare. Donec in libero eget purus auctor gravida vitae id sapien. Nulla porta mi quis erat vestibulum pretium. Nunc condimentum pretium lectus, eu dapibus nisi auctor ac. Proin varius ac dui ac mollis. Fusce elit ante, hendrerit nec mauris ut, lobortis laoreet velit. 
+            </div><div class="titleContentBloc"><div class="barreTitle"></div></div><div><ul class="toto"><li><div>LeBlog</div><p class="p1">
+                            Que faire d'un renfoncement de mur ?
+
+                        </p><p class="p2">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac interdum odio. Ut sem mi, bibendum vitae tincidunt vel, interdum eu dui. Integer sapien enim, congue a odio id, scelerisque sodales massa. Fusce egestas risus scelerisque sem hendrerit, id auctor augue convallis. 
+                        </p></li><li><div>Derniers avis</div><p class="p1">
+                            Que faire d'un renfoncement de mur ?
+
+                        </p><p class="p2">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac interdum odio. Ut sem mi, bibendum vitae tincidunt vel, interdum eu dui. Integer sapien enim, congue a odio id, scelerisque sodales massa. Fusce egestas risus scelerisque sem hendrerit, id auctor augue convallis. 
+                        </p></li><li><div>Cr&eacute;ez votre alerte email</div><p class="p1">
+                            Que faire d'un renfoncement de mur ?
+
+                        </p><p class="p2">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac interdum odio. Ut sem mi, bibendum vitae tincidunt vel, interdum eu dui. Integer sapien enim, congue a odio id, scelerisque sodales massa. Fusce egestas risus scelerisque sem hendrerit, id auctor augue convallis. 
+                        </p></li></ul></div></div>

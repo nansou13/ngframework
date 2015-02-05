@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<document xmlns="http://www.w3.org/1999/xhtml" xmlns:ng="http://www.gigan.fr/" lang="fr" xml:lang="fr">  
+	<div>
+	<div class="widget stacked" style="width: 300px; display: inline-block;">
+		<div class="widget-header">
+			<i class="icon-bookmark"></i>
+			<h3>Administration neuf</h3>
+		</div> <!-- /widget-header -->
+
+		<div class="widget-content">
+
+			<div class="shortcuts" style="width: 270px;">
+				<a href="/progneuf/list" class="shortcut">
+					<i class="shortcut-icon icon-list-alt"></i>
+					<span class="shortcut-label">Listing</span>
+				</a>
+
+				<a href="/progneuf/add" class="shortcut">
+					<i class="shortcut-icon icon-bookmark"></i>
+					<span class="shortcut-label">Ajouter</span>								
+				</a>		
+			</div> <!-- /shortcuts -->	
+
+		</div> <!-- /widget-content -->
+
+	</div>
+
+<div class="widget stacked" style="width: 420px; display: inline-block; margin-left: 10px;">
+
+		<div class="widget-header">
+			<i class="icon-bookmark"></i>
+			<h3>Administration transaction</h3>
+		</div> <!-- /widget-header -->
+
+		<div class="widget-content">
+
+			<div class="shortcuts" style="width: 360px;">
+				<a href="/transaction/list" class="shortcut mini">
+					<i class="shortcut-icon icon-list-alt"></i>
+					<span class="shortcut-label">Listing</span>
+				</a>
+
+				<a href="/transaction/add" class="shortcut mini">
+					<i class="shortcut-icon icon-bookmark"></i>
+					<span class="shortcut-label">Ajouter</span>								
+				</a>
+
+				<a href="/transaction/listville" class="shortcut mini">
+					<i class="shortcut-icon icon-signal"></i>
+					<span class="shortcut-label">Villes</span>	
+				</a>
+				<a href="/transaction/demande" class="shortcut mini">
+					<i class="shortcut-icon icon-screenshot"></i>
+					<span class="shortcut-label">Demandes</span>	
+				</a>
+			</div> <!-- /shortcuts -->	
+
+		</div> <!-- /widget-content -->
+
+	</div>
+
+
+	<div class="widget stacked" style="width: 300px; display: inline-block; margin-left: 10px;">
+
+		<div class="widget-header">
+			<i class="icon-bookmark"></i>
+			<h3>Administration Blog</h3>
+		</div> <!-- /widget-header -->
+
+		<div class="widget-content">
+
+			<div class="shortcuts" style="width: 270px;">
+				<a href="/blog/list" class="shortcut">
+					<i class="shortcut-icon icon-list-alt"></i>
+					<span class="shortcut-label">Listing</span>
+				</a>
+
+				<a href="/blog/add" class="shortcut">
+					<i class="shortcut-icon icon-bookmark"></i>
+					<span class="shortcut-label">Ajouter</span>								
+				</a>		
+			</div> <!-- /shortcuts -->	
+
+		</div> <!-- /widget-content -->
+
+	</div>
+</div>
+</document>

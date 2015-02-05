@@ -1,0 +1,360 @@
+<script src="/data/ckeditor/ckeditor.js"></script><div id="panelAdmin">
+<?php
+
+echo NgGadget::factory("adminMenu")->display();
+?>
+<div class="widget stacked"><div class="widget-header"><i class="icon-bookmark"></i><h3>Administration</h3></div><div class="step2"><form method="POST" id="formStep2"><div class="widget-content"><div class="span6" style="margin-bottom: 30px;"><ul class="nav nav-tabs"><li class="active"><a rel="stepDesc" href="#">Descriptions</a></li><li><a href="#" rel="stepImg">Images</a></li><li><a href="#" rel="stepDetail">Details</a></li></ul></div><div class="stepDesc"><fieldset><div class="col-sm-4"><div class="box"><div class="lead"><i class="icon-euro contrast"></i>
+                                                Prix du produit
+                                            </div><small class="text-muted">Proin eu nibh ut urna tristique rhoncus. Sed euismod, quam sed dignissim imperdiet, nulla leo vehicula mi, a sagittis lacus augue nec sapien.</small></div></div><div class="col-sm-7 col-sm-offset-1"><div class="form-group"><label>Prix :</label><div class="row"><div class="col-sm-6 col-md-6 col-lg-9"><div class="input-group"><span class="input-group-addon">
+                                                            &euro;
+                                                        </span><input type="text" class="form-control input-lg text-right" name="prix" id="prix" value="<?php echo $productInfo->prix;?>"/></div></div></div></div></div></fieldset><hr class="hr-normal"/><fieldset><div class="col-sm-4"><div class="box"><div class="lead"><i class="icon-info-sign text-contrast"></i>
+                                                Information du produit
+                                            </div><small class="text-muted">Veuillez renseigner les divers informations sur le produit que vous souhaitez ajouter dans votre catalogue.</small></div></div><div class="col-sm-7 col-sm-offset-1"><div class="form-group"><label>N&deg; mandat :</label><input type="text" class="form-control" value="<?php echo $productInfo->mandat;?>" name="mandat2" id="mandat2"/></div><div class="form-group"><label>Titre :</label><input type="text" class="form-control" value="<?php echo $productInfo->title;?>" name="title" id="title"/></div><div class="form-group"><label>type :</label><select name="type" id="type" class="form-control">
+<?php
+
+if ((is_array($typebien) || ($typebien instanceOf ArrayAccess)) && count($typebien) > 0) {
+$typeb = new Iterrator($typebien);
+
+foreach ($typebien as $typeb->index => $typeb->current) {
+?>
+
+<?php
+
+if ($productInfo->type==$typeb->current) {
+?>
+<option selected="selected" value="<?php echo $typeb->current;?>"><?php echo $typeb->current;?></option>
+<?php
+
+}else{
+?>
+<option value="<?php echo $typeb->current;?>"><?php echo $typeb->current;?></option>
+<?php
+
+}
+
+?>
+
+<?php
+
+}}
+
+?>
+</select></div><div class="form-group"><label>Description :</label><textarea class="form-control ckeditor" name="description" id="description" placeholder="Renseignez les informations qui s'afficheront dans la fiche du produit" rows="4"><?php echo $productInfo->description;?></textarea></div><div class="form-group"><label>Superficie :</label><input type="text" class="form-control" value="<?php echo $productInfo->superficie;?>" name="superficie" id="superficie"/></div><div class="form-group"><label>Superficie (carrez) :</label><input type="text" class="form-control" value="<?php echo $productInfo->superficie_carrez;?>" name="superficie_carrez" id="superficie_carrez"/></div><div class="form-group"><label>Nombre de pieces :</label><input type="text" class="form-control" value="<?php echo $productInfo->nbrepiece;?>" name="nbrepiece" id="nbrepiece"/></div><div class="form-group"><label>Localisation :</label><select name="villeID" id="villeID" class="form-control">
+<?php
+
+if ((is_array($selectContent) || ($selectContent instanceOf ArrayAccess)) && count($selectContent) > 0) {
+$ville = new Iterrator($selectContent);
+
+foreach ($selectContent as $ville->index => $ville->current) {
+?>
+
+<?php
+
+if ($ville->current['id']==$productInfo->villeID) {
+?>
+<option selected="" value="<?php echo $ville->current['id'];?>"><?php echo $ville->current['value'];?></option>
+<?php
+
+}else{
+?>
+<option value="<?php echo $ville->current['id'];?>"><?php echo $ville->current['value'];?></option>
+<?php
+
+}
+
+?>
+
+<?php
+
+}}
+
+?>
+</select></div><div class="form-group"><label>Etage :</label><input type="text" class="form-control" value="<?php echo $productInfo->etage;?>" name="etage" id="etage"/> sur <input type="text" class="form-control" value="<?php echo $productInfo->etage_max;?>" name="etage_max" id="etage_max"/></div><div class="form-group"><label>ascenseur :</label>
+<?php
+
+if ($productInfo->ascenseur==1) {
+?>
+<input type="checkbox" checked="checked" class="" name="ascenseur" id="ascenseur"/>
+<?php
+
+}else{
+?>
+<input type="checkbox" class="" name="ascenseur" id="ascenseur"/>
+<?php
+
+}
+
+?>
+</div><div class="form-group"><label>Etat du bien :</label><select name="etat_bien" id="etat_bien" class="form-control">
+<?php
+
+if ((is_array($etatArray) || ($etatArray instanceOf ArrayAccess)) && count($etatArray) > 0) {
+$etat = new Iterrator($etatArray);
+
+foreach ($etatArray as $etat->index => $etat->current) {
+?>
+
+<?php
+
+if ($productInfo->etat_bien==$etat->current) {
+?>
+<option selected="selected" value="<?php echo $etat->current;?>"><?php echo $etat->current;?></option>
+<?php
+
+}else{
+?>
+<option value="<?php echo $etat->current;?>"><?php echo $etat->current;?></option>
+<?php
+
+}
+
+?>
+
+<?php
+
+}}
+
+?>
+</select></div><div class="form-group"><label>Ann&eacute;e de construction :</label><input type="text" class="form-control" value="<?php echo $productInfo->annee_construction;?>" name="annee_construction" id="annee_construction"/></div><div class="form-group"><label>Type de construction :</label><select name="type_construction" id="type_construction" class="form-control">
+<?php
+
+if ($productInfo->type_construction=='Traditionnel') {
+?>
+<option selected="selected" value="Traditionnel">Traditionnel</option>
+<?php
+
+}else{
+?>
+<option value="Traditionnel">Traditionnel</option>
+<?php
+
+}
+
+?>
+
+<?php
+
+if ($productInfo->type_construction=='Parpaing') {
+?>
+<option selected="selected" value="Parpaing">Parpaing</option>
+<?php
+
+}else{
+?>
+<option value="Parpaing">Parpaing</option>
+<?php
+
+}
+
+?>
+
+<?php
+
+if ($productInfo->type_construction=='Pierre') {
+?>
+<option selected="selected" value="Pierre">Pierre</option>
+<?php
+
+}else{
+?>
+<option value="Pierre">Pierre</option>
+<?php
+
+}
+
+?>
+
+<?php
+
+if ($productInfo->type_construction=='Bois') {
+?>
+<option selected="selected" value="Bois">Bois</option>
+<?php
+
+}else{
+?>
+<option value="Bois">Bois</option>
+<?php
+
+}
+
+?>
+</select></div><div class="form-group"><label>DPE Energie :</label><input type="text" class="form-control" value="<?php echo $productInfo->dpe_nrj;?>" name="dpe_nrj" id="dpe_nrj"/></div><div class="form-group"><label>DPE Climat :</label><input type="text" class="form-control" value="<?php echo $productInfo->dpe_climat;?>" name="dpe_climat" id="dpe_climat"/></div><div class="form-group"><label>Nom du propri&eacute;taire :</label><input type="text" class="form-control" value="<?php echo $productInfo->propnom;?>" name="propnom" id="propnom"/></div><div class="form-group"><label>Adresse du propri&eacute;taire :</label><input type="text" class="form-control" value="<?php echo $productInfo->propadresse;?>" name="propadresse" id="propadresse"/></div><div class="form-group"><label>T&eacute;l&eacute;phone du propri&eacute;taire :</label><input type="text" class="form-control" value="<?php echo $productInfo->propphone;?>" name="propphone" id="propphone"/></div><div class="form-group"><label>online :</label>
+<?php
+
+if ($productInfo->online==1) {
+?>
+<input type="checkbox" name="online" checked="checked" id="online"/>
+<?php
+
+}else{
+?>
+<input type="checkbox" name="online" id="online"/>
+<?php
+
+}
+
+?>
+</div></div></fieldset></div><div class="stepImg"><style>
+                                    <?php echo $css;?>
+                                </style><fieldset><div class="col-sm-4"><div class="box"><div class="lead"><i class="icon-info-sign text-contrast"></i>
+                                                Photos du produit
+                                            </div><small class="text-muted" id="contentImg">Selectionnez une zone.</small><div><span id="btnSuccessPhoto" class="btn btn-success disabled fileinput-button"><i class="icon-plus icon-white"></i><span> Ajouter une photo</span><input id="fileupload" type="file" name="files" multiple=""/></span><span class="deleteIMG btn-danger btn disabled" rel="" style="font-size: 18px; margin-left: 5px;"><i class="icon-trash"></i></span><span id="manageListPhoto" class="btn btn-default" data-toggle="modal" data-target="#myModal"><i class="icon-plus icon-white"></i><span>Manage</span></span><br/><br/><img src="/LD/IM/globals/ajax_loader.gif" class="hidden" id="progressBarPhoto"/></div></div></div><div class="col-sm-7 col-sm-offset-1"><div class="form-group"><div class="row">
+<?php
+
+for ($i="1" ; $i<=$nbrPhoto; $i++) {
+?>
+
+<?php
+
+if ($i<10) {
+?>
+<div class="col-sm-3 imgMandat" id="mini-0<?php echo $i;?>"><img src="http://monagence.immextenso.fr/LD/IM/globals/mandatimg/<?php echo $productInfo->mandat;?>/mini/0<?php echo $i;?>.jpg?<?php echo time();?>"/></div>
+<?php
+
+}else{
+?>
+<div class="col-sm-3 imgMandat" id="mini-<?php echo $i;?>"><img src="http://monagence.immextenso.fr/LD/IM/globals/mandatimg/<?php echo $productInfo->mandat;?>/mini/<?php echo $i;?>.jpg?<?php echo time();?>"/></div>
+<?php
+
+}
+
+?>
+
+<?php
+
+}
+
+?>
+<div class="col-sm-3 addImgDiv" id="addImgPict"><i class="icon-plus-sign"></i></div></div></div></div></fieldset><hr class="hr-normal"/><fieldset><div class="col-sm-4"><div class="box"><div class="lead"><i class="icon-info-sign text-contrast"></i>
+                                                Plan
+                                            </div>
+<?php
+
+if ($noPlanExist==1) {
+?>
+<div class="planBlockTotal"><span class="btn btn-success fileinput-button"><i class="icon-plus icon-white"></i><span> Ajouter un plan</span><input id="fileuploadPlan" type="file" name="files" multiple=""/></span><br/><br/><div id="progressPlan" class="progress progress-success progress-striped"><div class="bar"></div></div><div id="filesPlan"></div></div>
+<?php
+
+}else{
+?>
+<div class="planBlockTotal" style="display:none;"><span class="btn btn-success fileinput-button"><i class="icon-plus icon-white"></i><span> Ajouter un plan</span><input id="fileuploadPlan" type="file" name="files" multiple=""/></span><br/><br/><div id="progressPlan" class="progress progress-success progress-striped"><div class="bar"></div></div><div id="filesPlan"></div></div>
+<?php
+
+}
+
+?>
+</div></div><div class="plan2addPicto col-sm-11 col-sm-offset-1"><div class="form-group">
+<?php
+
+if ($noPlanExist==1) {
+?>
+<span class="ADDAPN btn-default btn" style="font-size: 18px; display: block; margin-bottom: 20px;display:none;"><i class="icon-plus-sign">Ajouter un spot</i></span><span class="removemap btn-default btn" style="font-size: 18px; display: block; margin-bottom: 20px;display:none;"><i class="icon-trash">Supprimer le plan</i></span>
+<?php
+
+}else{
+?>
+<span class="ADDAPN btn-default btn" style="font-size: 18px; display: block; margin-bottom: 20px;"><i class="icon-plus-sign">Ajouter un spot</i></span><span class="removemap btn-default btn" style="font-size: 18px; display: block; margin-bottom: 20px;"><i class="icon-trash">Supprimer le plan</i></span>
+<?php
+
+}
+
+?>
+<div class="infoApnAdd hidden"><div class="col-sm-6"><span class="deleteSpot btn-danger btn hidden" rel="" style="font-size: 18px;margin-bottom: 20px;"><i class="icon-trash">Supprimer le spot</i></span></div><div class="col-sm-6"><span class="addpanoSpot fileinput-button btn-info btn hidden" rel="" style="font-size: 18px; margin-bottom: 20px;"><i class="icon-plus-sign">Ajouter une photo</i><input id="fileuploadPano" type="file" name="files" multiple=""/></span></div><div style="text-align: center; margin-bottom: 20px;"><img id="panoImgImgLoader" class="hidden" src="/LD/IM/globals/ajax_loader_1.gif"/><img id="panoImgImg" src=""/></div></div><div id="planModele"><img id="planImgImg" src="http://monagence.immextenso.fr/LD/IM/globals/mandatimg/<?php echo $productInfo->mandat;?>/plan/plan.jpg"/>
+                                                <?php echo $htmlAPN;?>
+                                            </div></div></div></fieldset></div><div class="stepDetail"><fieldset><div class="col-sm-4"><div class="box"><div class="lead"><i class="icon-info-sign text-contrast"></i>
+                                                Pi&egrave;ces Interieurs
+                                            </div></div></div><div class="col-sm-7 col-sm-offset-1"><div class="form-group"><label>Nom :</label><input type="text" class="form-control" name="piece_nom" id="piece_nom"/></div><div class="form-group"><label>Surface :</label><input type="text" class="form-control" name="piece_surface" id="piece_surface"/></div><div class="form-group"><label>Orientation :</label><input type="text" class="form-control" name="piece_orientation" id="piece_orientation"/></div><div class="form-group"><label>Sol/Mur :</label><input type="text" class="form-control" name="piece_solmur" id="piece_solmur"/></div><div class="form-group"><label>Note :</label><input type="text" class="form-control" name="piece_note" id="piece_note"/></div><div class="btn btn-success btn-lg" id="btnValidPiece"><i class="icon-save"></i>
+                                            Enregistrer
+                                        </div></div><div class="toto" style="display: block; clear: both; padding-top: 30px;"><table id="pieceArray" class="table table-striped"><thead><tr><th>Nom</th><th>Surface</th><th>Orientation</th><th>Sol / mur</th><th>Note</th><th>Action</th></tr></thead><tbody>
+<?php
+
+if (count($listePiece)>0) {
+?>
+
+<?php
+
+if ((is_array($listePiece) || ($listePiece instanceOf ArrayAccess)) && count($listePiece) > 0) {
+$piece = new Iterrator($listePiece);
+
+foreach ($listePiece as $piece->index => $piece->current) {
+?>
+<tr class="contentPiece" id="idp-<?php echo $piece->current->id;?>"><td><?php echo $piece->current->nom;?></td><td><?php echo $piece->current->surface;?>m2</td><td><?php echo $piece->current->orientation;?></td><td><?php echo $piece->current->solmur;?></td><td><?php echo $piece->current->note;?></td><td><a class="icon-trash-a" href="#"><i class="icon-trash"></i></a><a style="margin-left: 5px;" class="icon-edit-a editint" href="/TR/92/<?php echo $piece->current->id;?>/0" data-target="#myModalEditPiece" data-toggle="modal"><i class="icon-edit"></i></a></td></tr>
+<?php
+
+}}
+
+?>
+
+<?php
+
+}
+
+?>
+</tbody></table></div></fieldset><hr class="hr-normal"/><fieldset><div class="col-sm-4"><div class="box"><div class="lead"><i class="icon-info-sign text-contrast"></i>
+                                                Pi&egrave;ces Exterieurs
+                                            </div></div></div><div class="col-sm-7 col-sm-offset-1"><div class="form-group"><label>Nom :</label><input type="text" class="form-control" name="piece_nom_ext" id="piece_nom_ext"/></div><div class="form-group"><label>Surface :</label><input type="text" class="form-control" name="piece_surface_ext" id="piece_surface_ext"/></div><div class="form-group"><label>Orientation :</label><input type="text" class="form-control" name="piece_orientation_ext" id="piece_orientation_ext"/></div><div class="form-group"><label>Sol/Mur :</label><input type="text" class="form-control" name="piece_solmur_ext" id="piece_solmur_ext"/></div><div class="form-group"><label>Note :</label><input type="text" class="form-control" name="piece_note_ext" id="piece_note_ext"/></div><div class="btn btn-success btn-lg" id="btnValidPiece_ext"><i class="icon-save"></i>
+                                            Enregistrer
+                                        </div></div><div class="toto_ext" style="display: block; clear: both; padding-top: 30px;"><table id="pieceArrayExt" class="table table-striped"><thead><tr><th>Nom</th><th>Surface</th><th>Orientation</th><th>Sol / mur</th><th>Note</th><th>Action</th></tr></thead><tbody>
+<?php
+
+if (count($listePiece_ext)>0) {
+?>
+
+<?php
+
+if ((is_array($listePiece_ext) || ($listePiece_ext instanceOf ArrayAccess)) && count($listePiece_ext) > 0) {
+$piece_ext = new Iterrator($listePiece_ext);
+
+foreach ($listePiece_ext as $piece_ext->index => $piece_ext->current) {
+?>
+<tr class="contentPiece" id="idp-<?php echo $piece_ext->current->id;?>-ext"><td><?php echo $piece_ext->current->nom;?></td><td><?php echo $piece_ext->current->surface;?>m2</td><td><?php echo $piece_ext->current->orientation;?></td><td><?php echo $piece_ext->current->solmur;?></td><td><?php echo $piece_ext->current->note;?></td><td><a class="icon-trash-a" href="#"><i class="icon-trash"></i></a><a style="margin-left: 5px;" class="icon-edit-a editint" href="/TR/92/<?php echo $piece_ext->current->id;?>/1" data-target="#myModalEditPiece" data-toggle="modal"><i class="icon-edit"></i></a></td></tr>
+<?php
+
+}}
+
+?>
+
+<?php
+
+}
+
+?>
+</tbody></table></div></fieldset><hr class="hr-normal"/><fieldset><div class="col-sm-4"><div class="box"><div class="lead"><i class="icon-info-sign text-contrast"></i>
+                                                Charges
+                                            </div><small class="text-muted">Saisissez le tarif mensuel sans le signe euro.</small></div></div><div class="col-sm-7 col-sm-offset-1"><div class="form-group"><label>Charges de copropri&eacute;t&eacute;s :</label><input type="text" value="<?php echo $productInfo->charge_copro;?>" class="form-control" name="charge_copro" id="charge_copro"/></div><div class="form-group"><label>Eau :</label><input type="text" class="form-control" value="<?php echo $productInfo->eau;?>" name="eau" id="eau"/></div><div class="form-group"><label>GAZ :</label><input type="text" class="form-control" value="<?php echo $productInfo->gaz;?>" name="gaz" id="gaz"/></div><div class="form-group"><label>EDF :</label><input type="text" class="form-control" name="edf" value="<?php echo $productInfo->edf;?>" id="edf"/></div><div class="form-group"><label>Taxe fonci&egrave;re :</label><input type="text" class="form-control" name="t_fonciere" value="<?php echo $productInfo->t_fonciere;?>" id="t_fonciere"/></div><div class="form-group"><label>Taxe d'habitation :</label><input type="text" class="form-control" value="<?php echo $productInfo->t_habitation;?>" name="t_habitation" id="t_habitation"/></div><div class="form-group"><label>Revenus locatifs :</label><input type="text" class="form-control" value="<?php echo $productInfo->revenus_loc;?>" name="revenus_loc" id="revenus_loc"/></div></div></fieldset><hr class="hr-normal"/><fieldset><div class="col-sm-4"><div class="box"><div class="lead"><i class="icon-info-sign text-contrast"></i>
+                                                Informations suppl&eacute;mentaires
+                                            </div></div></div><div class="col-sm-7 col-sm-offset-1"><div class="form-group"><label>Nombre de niveau :</label><input type="text" class="form-control" value="<?php echo $productInfo->nbre_niveau;?>" name="nbre_niveau" id="nbre_niveau" placeholder="0 pour plain pieds"/></div><div class="form-group"><label>Nombre de chambres :</label><input type="text" class="form-control" value="<?php echo $productInfo->nbre_chambre;?>" name="nbre_chambre" id="nbre_chambre"/></div><div class="form-group"><label>Nombre de SDB :</label><input type="text" class="form-control" value="<?php echo $productInfo->nbre_sdb;?>" name="nbre_sdb" id="nbre_sdb"/></div><div class="form-group"><label>Nombre de salle d'eau :</label><input type="text" class="form-control" value="<?php echo $productInfo->nbre_se;?>" name="nbre_se" id="nbre_se"/></div><div class="form-group"><label>info sup :</label><textarea class="form-control ckeditor" name="extrainfo" id="extrainfo" placeholder="Renseignez les options" rows="4"><?php echo $productInfo->extrainfo;?></textarea></div><div class="form-group"><label>Adresse :</label><textarea class="form-control" name="adresse" id="adresse" placeholder="Renseignez l'adresse" rows="4"><?php echo $productInfo->adresse;?></textarea></div>
+<?php
+
+if ((is_array($champsbinaire) || ($champsbinaire instanceOf ArrayAccess)) && count($champsbinaire) > 0) {
+$input = new Iterrator($champsbinaire);
+
+foreach ($champsbinaire as $input->index => $input->current) {
+?>
+<div class="form-group"><div class="checkInfoAppart"><label><?php echo $input->current;?> :</label>
+<?php
+
+if ($productInfo->{$input->index}==1) {
+?>
+<input type="checkbox" checked="checked" class="" name="<?php echo $input->index;?>" id="<?php echo $input->index;?>"/>
+<?php
+
+}else{
+?>
+<input type="checkbox" class="" name="<?php echo $input->index;?>" id="<?php echo $input->index;?>"/>
+<?php
+
+}
+
+?>
+</div></div>
+<?php
+
+}}
+
+?>
+</div></fieldset></div><div class="form-actions"><div class="row"><div class="col-sm-7 col-sm-offset-5"><div class="btn btn-primary btn-lg"><i class="icon-save"></i>
+                                            Save
+                                        </div></div></div></div></div></form></div><div class="step3"><div class="widget-content"><fieldset><i class="icon-ok-sign"></i>
+                            Modification effectu&eacute;e<br/><a href="/transaction/list/" style="font-size: 14px;">retour au listing</a></fieldset></div></div></div></div><div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button><h4 class="modal-title" id="myModalLabel">Organiser les photos</h4></div><div class="modal-body"><table id="manageimgarray" class="table table-striped"><thead><tr><th>#</th><th>Image</th></tr></thead><tbody></tbody></table></div><div class="modal-footer"><button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button></div></div></div></div><div class="modal fade" id="myModalEditPiece" tabindex="-1" role="dialog" aria-labelledby="myModalLabelEditPiece" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button><h4 class="modal-title" id="myModalLabelEditPiece">Editer</h4></div><div class="modal-body"></div><div class="modal-footer"><button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button><button type="button" id="SaveEditPiece" class="btn btn-primary">Enregistrer</button></div></div></div></div>

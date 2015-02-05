@@ -1,0 +1,17 @@
+#headerTop{
+	height: 30px;
+	background-color: #999;
+	color: #FFFFFF;
+}
+.container {
+    max-width: 1000px !important;
+}
+.right{
+	float: right;
+
+}
+.logoSocial{
+	font-size: 20px; 
+	color: #00ACED;
+	margin: 2px !important;
+}

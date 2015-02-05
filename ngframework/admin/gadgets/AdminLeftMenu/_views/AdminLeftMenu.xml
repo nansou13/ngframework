@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<document xmlns="http://www.w3.org/1999/xhtml" xmlns:ng="http://www.gigan.fr/" lang="fr" xml:lang="fr">  
+
+	<div id="main-nav-bg"></div>
+	<nav id="main-nav">
+		<div class="navigation">
+			<ul class="nav nav-stacked">
+				<li class="">
+					<a href="/">
+						<i class="icon-dashboard"></i>
+						<span>Dashboard</span>
+					</a>
+				</li>
+				<li class="">
+					<a href="#" class="dropdown-collapse"><i class="icon-edit"></i>
+						<span>Catalogue</span>
+						<i class="icon-angle-down angle-down"></i>
+					</a>
+
+					<ul class="nav nav-stacked">
+						<li class="">
+							<a href="form_styles.html">
+								<i class="icon-caret-right"></i>
+								<span>Produits</span>
+							</a>
+						</li>
+						<li class="">
+							<a href="form_components.html">
+								<i class="icon-caret-right"></i>
+								<span>Cat&amp;eacute;gorie</span>
+							</a>
+						</li>
+						<li class="">
+							<a href="validations.html">
+								<i class="icon-caret-right"></i>
+								<span>Suivi</span>
+							</a>
+						</li>
+						<li class="">
+							<a href="wizard.html">
+								<i class="icon-caret-right"></i>
+								<span>Marque</span>
+							</a>
+						</li>
+						<li class="">
+							<a href="wizard.html">
+								<i class="icon-caret-right"></i>
+								<span>Fournisseur</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" class="dropdown-collapse ">
+						<i class="icon-tint"></i>
+						<span>Commandes</span>
+						<i class="icon-angle-down angle-down"></i>
+					</a>
+					<ul class="nav nav-stacked">
+						<li class="">
+							<a href="ui_elements.html">
+								<i class="icon-caret-right"></i>
+								<span>Toutes les commandes</span>
+							</a>
+						</li>
+						<li class="">
+							<a href="widgets.html">
+								<i class="icon-caret-right"></i>
+								<span>Factures</span>
+							</a>
+						</li>
+						<li class="">
+							<a href="widgets.html">
+								<i class="icon-caret-right"></i>
+								<span>Retour produit</span>
+							</a>
+						</li>
+						<li class="">
+							<a href="widgets.html">
+								<i class="icon-caret-right"></i>
+								<span>Messages predefinis</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" class="dropdown-collapse ">
+						<i class="icon-cogs"></i>
+						<span>Clients</span>
+						<i class="icon-angle-down angle-down"></i>
+					</a>
+					<ul class="nav nav-stacked">
+						<li class="">
+							<a href="charts.html">
+								<i class="icon-bar-chart"></i>
+								<span>Tous les clients</span>
+							</a>
+						</li>
+						<li class="">
+							<a href="address_book.html">
+								<i class="icon-envelope"></i>
+								<span>Avoirs</span>
+							</a>
+						</li>
+						<li class="">
+							<a href="chats.html">
+								<i class="icon-comments"></i>
+								<span>Panier</span>
+							</a>
+						</li>
+						<li class="">
+							<a href="filetrees.html">
+								<i class="icon-list-ul"></i>
+								<span>Code promo</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="">
+					<a href="tables.html">
+						<i class="icon-table"></i>
+						<span>Transport</span>
+					</a>
+				</li>
+				<li class="">
+					<a href="grid.html">
+						<i class="icon-th"></i>
+						<span>Preferences</span>
+					</a>
+				</li>
+				<li class="">
+					<a href="type.html">
+						<i class="icon-font"></i>
+						<span>Statistiques</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+</document>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<document xmlns="http://www.w3.org/1999/xhtml" xmlns:ng="http://www.gigan.fr/" lang="fr" xml:lang="fr">
+    <body>
+		<fieldset>
+			<div class="col-sm-4">
+				<div class="box">
+					<div class="lead">
+						<i class="icon-info-sign text-contrast"></i>
+						Pi&amp;egrave;ces
+					</div>
+
+				</div>
+			</div>
+			<div class="col-sm-7 col-sm-offset-1">
+				<div class="form-group">
+					<label>Nom :</label>
+					<input type="text" value="{utf8_encode($pieceInfo->nom)}" class="form-control" name="piece_nom" id="edit_piece_nom"/>
+				</div>
+				<div class="form-group">
+					<label>Surface :</label>
+					<input type="text" value="{utf8_encode($pieceInfo->surface)}" class="form-control" name="piece_surface" id="edit_piece_surface"/>
+				</div>
+				<div class="form-group">
+					<label>Orientation :</label>
+					<input type="text" class="form-control" value="{utf8_encode($pieceInfo->orientation)}" name="edit_piece_orientation" id="edit_piece_orientation"/>
+				</div>
+				<div class="form-group">
+					<label>Sol/Mur :</label>
+					<input type="text" class="form-control" value="{utf8_encode($pieceInfo->solmur)}" name="piece_solmur" id="edit_piece_solmur"/>
+				</div>
+				<div class="form-group">
+					<label>Note :</label>
+					<input type="text" class="form-control" value="{utf8_encode($pieceInfo->note)}" name="piece_note" id="edit_piece_note"/>
+				</div>
+
+
+			</div>
+<input type="hidden" id="idpieceedit" name="idpieceedit" value="{$pieceInfo->id}"/>
+<input type="hidden" id="idinput" name="idinput" value="{$idinput}"/>
+
+
+		</fieldset>
+	</body>
+</document>

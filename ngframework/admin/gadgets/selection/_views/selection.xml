@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<document xmlns="http://www.w3.org/1999/xhtml" xmlns:ng="http://www.gigan.fr/" lang="fr" xml:lang="fr">  
+	
+	<div id="selection">
+		
+		<div class="titleSelection">Notre selection</div>
+		<div class="selectionContent">
+			<img src="/LD/IM/globals/01.jpg"/>
+			<div class="selectionVille">Marseille 8</div>
+			<div class="selectionPrix">Prix : 300000&amp;euro;</div>
+		</div>
+		<div class="selectionContent">
+			<img src="/LD/IM/globals/02.jpg"/>
+			<div class="selectionVille">Marseille 8</div>
+			<div class="selectionPrix">Prix : 300000&amp;euro;</div>
+		</div>
+		<div class="selectionContent">
+			<img src="/LD/IM/globals/03.jpg"/>
+			<div class="selectionVille">Marseille 8</div>
+			<div class="selectionPrix">Prix : 300000&amp;euro;</div>
+		</div>
+		<div class="selectionContent">
+			<img src="/LD/IM/globals/04.jpg"/>
+			<div class="selectionVille">Marseille 8</div>
+			<div class="selectionPrix">Prix : 300000&amp;euro;</div>
+		</div>
+	</div>
+	
+	
+	
+	
+	
+
+</document>

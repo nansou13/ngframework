@@ -1,0 +1,85 @@
+.header ul{
+    padding: 0px; font-size: 15px;
+}
+.header ul li {
+    display: inline-block;
+    font-weight: bold;
+    text-transform: uppercase;
+	padding: 8px;
+}
+.header ul li.active{
+	color: #558c8a;
+}
+.header .menuspe{
+    margin: 0px 130px;
+}
+.header .menuspeleft{
+   
+}
+.header .menusperight{
+
+}
+
+#logo{
+    text-align: center; 
+    margin-top: 30px;
+}
+.header ul li a, #header ul li a:hover{
+	color:#333333;
+}
+.header .clientmenu .menuspe {
+    margin: 10px 58px 0 !important;
+}
+.header .leftmenuli {
+
+}
+.header .leftmenuli li,.header .rightmenuli li {
+	height:45px;   
+    display: block !important;
+    margin-left: 10px !important;
+}
+.header .leftmenuli li img {
+	float:left;
+width:30px;   
+}
+.header .rightmenuli li img {
+	float:right;
+width:30px;  
+margin-left: 10px; 
+}
+
+.header .leftmenuli li a {
+	font-size: 15px;
+    line-height: 30px;
+font-weight: normal;
+    margin-left: 5px;  
+}
+.header .rightmenuli li a {
+	font-size: 15px;
+    line-height: 30px;
+font-weight: normal;
+    margin-left: 5px;  
+text-align:right;
+width:270px;
+display: block;
+text-transform: lowercase;
+}
+#contentSite{
+position:relative;
+}
+
+.socialBar img{
+float:none !important;
+width:auto !important;
+margin-left:0px !important;
+}
+.socialBar a{
+display:inline !important;
+}
+.socialBar div{
+display:inline-block !important;
+vertical-align: top;
+}
+.socialBar{
+text-align:right !important;
+}

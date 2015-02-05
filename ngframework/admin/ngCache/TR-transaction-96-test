@@ -1,0 +1,5 @@
+<style>
+			<?php echo $css;?>
+		</style><span class="ADDAPN">++++++</span><div id="planModele"><img src="http://www.plans-maisons.com/image/0-0-0-plan-maison-pdf.png"/>
+			<?php echo $htmlAPN;?>
+		</div>

@@ -1,0 +1,22 @@
+<div id="panelAdmin">
+<?php
+
+echo NgGadget::factory("adminMenu")->display();
+?>
+<a href="/transaction/addville/"><button style="margin-bottom:5px" class="btn btn-primary"><i class="icon-plus"></i>
+					Ajouter
+				</button></a><div class="widget stacked"><div class="widget-header"><i class="icon-bookmark"></i><h3>Liste des villes</h3></div><div class="widget-content"><fieldset><table class="greyColor table table-bordered table-striped table-highlight dataTableInit"><thead><tr><th>ville</th><th>code postal</th><th>Modifier</th><th>Supprimer</th></tr></thead><tbody>
+<?php
+
+if ((is_array($productList) || ($productList instanceOf ArrayAccess)) && count($productList) > 0) {
+$product = new Iterrator($productList);
+
+foreach ($productList as $product->index => $product->current) {
+?>
+<tr><td><?php echo $product->current->ville;?></td><td><?php echo $product->current->cp;?></td><td><a href="/transaction/editville/<?php echo $product->current->id;?>"><i class="icon-pencil"></i></a></td><td><a href="/transaction/deleteville/<?php echo $product->current->id;?>"><i class="icon-trash"></i></a></td></tr>
+<?php
+
+}}
+
+?>
+</tbody></table></fieldset></div></div></div>

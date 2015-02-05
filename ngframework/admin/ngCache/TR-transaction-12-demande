@@ -1,0 +1,22 @@
+<div id="panelAdmin">
+<?php
+
+echo NgGadget::factory("adminMenu")->display();
+?>
+<a href="/transaction/demandenew/" style="vertical-align: top; margin-right: 10px;"><button style="margin-bottom:5px" class="btn btn-primary"><i class="icon-plus"></i>
+					Ajouter
+				</button></a><div class="widget stacked"><div class="widget-header"><i class="icon-bookmark"></i><h3>Liste des demandes</h3></div><div class="widget-content"><fieldset><table class="greyColor table table-bordered table-striped table-highlight dataTableInit"><thead><tr><th>#</th><th>Titre</th><th>Localisation</th><th>Budget max</th><th>Voir</th><th>Modifier</th><th>Supprimer</th></tr></thead><tbody>
+<?php
+
+if ((is_array($demandeList) || ($demandeList instanceOf ArrayAccess)) && count($demandeList) > 0) {
+$demande = new Iterrator($demandeList);
+
+foreach ($demandeList as $demande->index => $demande->current) {
+?>
+<tr><td><?php echo $demande->current->id;?></td><td><?php echo $demande->current->titre;?></td><td><?php echo $demande->current->localisation_mini;?></td><td><?php echo $demande->current->budget;?></td><td><a href="http://monagence.immextenso.fr/detail/int/<?php echo $demande->current->id;?>/<?php echo $demande->current->urltext;?>.html" target="_blank"><i class="icon-eye-open"></i></a></td><td><a href="/transaction/demandeadd/<?php echo $demande->current->id;?>"><i class="icon-pencil"></i></a></td><td><a href="/transaction/demanderemove/<?php echo $demande->current->id;?>"><i class="icon-trash"></i></a></td></tr>
+<?php
+
+}}
+
+?>
+</tbody></table></fieldset></div></div></div>

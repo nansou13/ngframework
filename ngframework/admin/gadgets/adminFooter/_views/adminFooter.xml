@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<document xmlns="http://www.w3.org/1999/xhtml" xmlns:ng="http://www.gigan.fr/" lang="fr" xml:lang="fr">  
+	<footer id="footer">
+		<div class="footer-wrapper">
+			<div class="row">
+				<div class="col-sm-6 text">
+					Copyright &amp;copy; 2013 Your Project Name
+				</div>
+				<div class="col-sm-6 buttons">
+					<a href="http://www.bublinastudio.com/flatty" class="btn btn-link">Preview</a>
+					<a href="https://wrapbootstrap.com/theme/flatty-flat-administration-template-WB0P6NR1N" class="btn btn-link">Purchase</a>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+</document>

@@ -1,0 +1,57 @@
+<div id="panelAdmin">
+<?php
+
+echo NgGadget::factory("adminMenu")->display();
+?>
+<div class="widget stacked"><div class="widget-header"><i class="icon-bookmark"></i><h3>Administration</h3></div><div class="step1"><div class="widget-content"><fieldset><div class="col-sm-4"><div class="box"><div class="lead"><i class="icon-info-sign text-contrast"></i>
+										Information du produit
+									</div><small class="text-muted">Veuillez renseigner les divers informations sur le produit que vous souhaitez ajouter dans votre catalogue.</small></div></div><div class="col-sm-7 col-sm-offset-1"><div class="form-group"><label>N&deg; mandat :</label><input type="text" class="form-control" placeholder="Ex : NF15236RT" name="mandat" id="mandat"/></div></div></fieldset><div class="form-actions"><div class="row"><div class="col-sm-7 col-sm-offset-5"><div class="btn btn-primary btn-lg"><i class="icon-save"></i>
+										Save
+									</div></div></div></div></div></div><div class="step2"><form method="POST" id="formStep2"><div class="widget-content"><fieldset><div class="col-sm-4"><div class="box"><div class="lead"><i class="icon-euro contrast"></i>
+											Prix du produit
+										</div><small class="text-muted">Proin eu nibh ut urna tristique rhoncus. Sed euismod, quam sed dignissim imperdiet, nulla leo vehicula mi, a sagittis lacus augue nec sapien.</small></div></div><div class="col-sm-7 col-sm-offset-1"><div class="form-group"><label>Prix :</label><div class="row"><div class="col-sm-6 col-md-6 col-lg-9"><div class="input-group"><span class="input-group-addon">
+														&euro;
+													</span><input type="text" class="form-control input-lg text-right" name="prix" id="prix"/></div></div></div></div></div></fieldset><hr class="hr-normal"/><fieldset><div class="col-sm-4"><div class="box"><div class="lead"><i class="icon-info-sign text-contrast"></i>
+											Information du produit
+										</div><small class="text-muted">Veuillez renseigner les divers informations sur le produit que vous souhaitez ajouter dans votre catalogue.</small></div></div><div class="col-sm-7 col-sm-offset-1"><div class="form-group"><label>N&deg; mandat :</label><input type="text" class="form-control" name="mandat2" id="mandat2" disabled=""/></div><div class="form-group"><label>Titre :</label><input type="text" class="form-control" name="title" id="title"/></div><div class="form-group"><label>url :</label><input type="text" class="form-control" name="urltext" id="urltext"/></div><div class="form-group"><label>type :</label><select name="type" id="type" class="form-control"><option value="Appartement">Appartement</option><option value="maison">Maison</option><option value="terrain">Terrain</option><option value="Bureau">Gros travaux</option></select></div><div class="form-group"><label>Description :</label><textarea class="form-control" name="description" id="description" placeholder="Renseignez les informations qui s'afficheront dans la fiche du produit" rows="4"></textarea></div><div class="form-group"><label>Superficie :</label><input type="text" class="form-control" name="superficie" id="superficie"/></div><div class="form-group"><label>Superficie (carrez) :</label><input type="text" class="form-control" name="superficie_carrez" id="superficie_carrez"/></div><div class="form-group"><label>Nombre de pieces :</label><input type="text" class="form-control" name="nbrepiece" id="nbrepiece"/></div><div class="form-group"><label>Localisation :</label><select name="localisation" id="localisation" class="form-control">
+<?php
+
+if ((is_array($selectContent) || ($selectContent instanceOf ArrayAccess)) && count($selectContent) > 0) {
+$ville = new Iterrator($selectContent);
+
+foreach ($selectContent as $ville->index => $ville->current) {
+?>
+<option value="<?php echo $ville->current['id'];?>"><?php echo $ville->current['value'];?></option>
+<?php
+
+}}
+
+?>
+</select></div><div class="form-group"><label>Etage :</label><input type="text" class="form-control" name="etage" id="etage"/> sur <input type="text" class="form-control" name="etage_max" id="etage_max"/></div><div class="form-group"><label>ascenseur :</label><input type="checkbox" class="" name="ascenseur" id="ascenseur"/></div><div class="form-group"><label>Etat du bien :</label><select name="etat_bien" id="etat_bien" class="form-control"><option value="r&eacute;nov&eacute;">r&eacute;nov&eacute;</option><option value="neuf">neuf</option><option value="rafra&icirc;chissement &agrave; pr&eacute;voir">rafra&icirc;chissement &agrave; pr&eacute;voir</option><option value="Gros travaux">Gros travaux</option></select></div><div class="form-group"><label>Ann&eacute;e de construction :</label><input type="text" class="form-control" name="annee_construction" id="annee_construction"/></div><div class="form-group"><label>Type de construction :</label><select name="type_construction" id="type_construction" class="form-control"><option value="traditionnel">traditionnel</option><option value="parpaing">parpaing</option><option value="Pierre">Pierre</option><option value="Bois">Bois</option></select></div></div></fieldset><hr class="hr-normal"/><fieldset><div class="col-sm-4"><div class="box"><div class="lead"><i class="icon-info-sign text-contrast"></i>
+											Photos du produit
+										</div><small class="text-muted" id="contentImg">Selectionnez une zone.</small><div><span class="btn btn-success fileinput-button"><i class="icon-plus icon-white"></i><span> Ajouter une photo</span><input id="fileupload" type="file" name="files" multiple=""/></span><br/><br/><div id="progress" class="progress progress-success progress-striped"><div class="bar"></div></div><div id="files"></div></div></div></div><div class="col-sm-7 col-sm-offset-1"><div class="form-group"><div class="row"><div class="col-sm-3 imgMandat selected" id="mini-01"><img src=""/></div><div class="col-sm-3 imgMandat" id="mini-02"><img src=""/></div><div class="col-sm-3 imgMandat" id="mini-03"><img src=""/></div><div class="col-sm-3 imgMandat" id="mini-04"><img src=""/></div></div></div></div></fieldset><hr class="hr-normal"/><fieldset><div class="col-sm-4"><div class="box"><div class="lead"><i class="icon-info-sign text-contrast"></i>
+											Information par pi&egrave;ces
+										</div></div></div><div class="col-sm-7 col-sm-offset-1"><div class="form-group"><label>Nom :</label><input type="text" class="form-control" name="piece_nom" id="piece_nom"/></div><div class="form-group"><label>Surface :</label><input type="text" class="form-control" name="piece_surface" id="piece_surface"/></div><div class="form-group"><label>Orientation :</label><input type="text" class="form-control" name="piece_orientation" id="piece_orientation"/></div><div class="form-group"><label>Sol/Mur :</label><input type="text" class="form-control" name="piece_solmur" id="piece_solmur"/></div><div class="form-group"><label>Note :</label><input type="text" class="form-control" name="piece_note" id="piece_note"/></div><div class="btn btn-success btn-lg" id="btnValidPiece"><i class="icon-save"></i>
+										Enregistrer
+									</div></div></fieldset><hr class="hr-normal"/><fieldset><div class="col-sm-4"><div class="box"><div class="lead"><i class="icon-info-sign text-contrast"></i>
+											Charges
+										</div></div></div><div class="col-sm-7 col-sm-offset-1"><div class="form-group"><label>Charges de copropri&eacute;t&eacute;s :</label><input type="text" class="form-control" name="charge_copro" id="charge_copro"/></div><div class="form-group"><label>Eau :</label><input type="text" class="form-control" name="eau" id="eau"/></div><div class="form-group"><label>GAZ :</label><input type="text" class="form-control" name="gaz" id="gaz"/></div><div class="form-group"><label>EDF :</label><input type="text" class="form-control" name="edf" id="edf"/></div><div class="form-group"><label>Taxe fonci&egrave;re :</label><input type="text" class="form-control" name="t_fonciere" id="t_fonciere"/></div><div class="form-group"><label>Taxe d'habitation :</label><input type="text" class="form-control" name="t_habitation" id="t_habitation"/></div><div class="form-group"><label>Revenus locatifs :</label><input type="text" class="form-control" name="revenus_loc" id="revenus_loc"/></div></div></fieldset><hr class="hr-normal"/><fieldset><div class="col-sm-4"><div class="box"><div class="lead"><i class="icon-info-sign text-contrast"></i>
+											Informations suppl&eacute;mentaires
+										</div></div></div><div class="col-sm-7 col-sm-offset-1"><div class="form-group"><label>Nombre de niveau :</label><input type="text" class="form-control" name="nbre_niveau" id="nbre_niveau" placeholder="0 pour plain pieds"/></div><div class="form-group"><label>Nombre de chambres :</label><input type="text" class="form-control" name="nbre_chambre" id="nbre_chambre"/></div><div class="form-group"><label>Nombre de SDB :</label><input type="text" class="form-control" name="nbre_sdb" id="nbre_sdb"/></div><div class="form-group"><label>Nombre de salle d'eau :</label><input type="text" class="form-control" name="nbre_se" id="nbre_se"/></div>
+<?php
+
+if ((is_array($champsbinaire) || ($champsbinaire instanceOf ArrayAccess)) && count($champsbinaire) > 0) {
+$input = new Iterrator($champsbinaire);
+
+foreach ($champsbinaire as $input->index => $input->current) {
+?>
+<div class="form-group"><label><?php echo $input->current;?> :</label><input type="checkbox" class="" name="<?php echo $input->index;?>" id="<?php echo $input->index;?>"/></div>
+<?php
+
+}}
+
+?>
+</div></fieldset><div class="form-actions"><div class="row"><div class="col-sm-7 col-sm-offset-5"><div class="btn btn-primary btn-lg"><i class="icon-save"></i>
+											Save
+										</div></div></div></div></div></form></div><div class="step3"><div class="widget-content"><fieldset><i class="icon-ok-sign"></i>
+							ajout effectu&eacute;<br/><a href="/transaction/list/" style="font-size: 14px;">retour au listing</a></fieldset></div></div></div></div>

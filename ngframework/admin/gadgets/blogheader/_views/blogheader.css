@@ -1,0 +1,57 @@
+#blogheader ul{
+    padding: 0px; font-size: 15px;
+}
+
+#blogheader ul li {
+    display: inline-block;
+    font-weight: bold;
+    text-transform: uppercase;
+	padding: 8px;
+}
+#blogheader ul li.active{
+	background-color: #CC3366;
+}
+#blogheader .menuspe{
+    margin: 0px 30px;
+}
+#blogheader .menuspeleft{
+   
+}
+#blogheader .menusperight{
+
+}
+
+#logo{
+    text-align: center; 
+    margin-top: 30px;
+}
+#blogheader ul li a, #blogheader ul li a:hover{
+	color:#333333;
+}
+
+#blogheader {
+    position: relative;
+    width: 900px;
+}
+.menuLeft, .menuRight {
+    position: absolute;
+}
+.menuLeft {
+    left: 0;
+	top: 0;
+}
+.menuRight {
+    right: -10px;
+	top:0;
+}
+#logo img {
+    width: 190px;
+}
+
+.iconBounded img {
+    margin: 2px;
+    width: 35px;
+}
+.iconBounded {
+    text-align: center;
+}

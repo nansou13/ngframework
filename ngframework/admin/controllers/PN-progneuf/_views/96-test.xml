@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<document xmlns="http://www.w3.org/1999/xhtml" xmlns:ng="http://www.gigan.fr/" lang="fr" xml:lang="fr">
+    <body>
+		<style>
+			{$css}
+		</style>
+		<span class="ADDAPN">++++++</span>
+		<div id="planModele">
+			<img src="http://www.plans-maisons.com/image/0-0-0-plan-maison-pdf.png"/>
+			{$htmlAPN}
+		</div>
+	</body>
+</document>

@@ -1,0 +1,15 @@
+AddType x-mapp-php5 .php
+Options +FollowSymlinks
+
+AuthName "Page d'administration IMM'EXTENSO"
+AuthType Basic
+AuthUserFile "/homepages/27/d518566678/htdocs/admin/.htpasswd"
+Require valid-user
+
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_URI} !/data/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)$ /index.php [L,QSA]

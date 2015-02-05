@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<document xmlns="http://www.w3.org/1999/xhtml" xmlns:ng="http://www.gigan.fr/" lang="fr" xml:lang="fr">  
+
+	<div id='footer'>
+		<h4>PHARO IMMO MARSEILLE</h4>
+		<div class="tinyText">&amp;copy; 2013 | Tous droits r&amp;eacute;serv&amp;eacute;s | Plan du site</div>
+		<!--<div class='creator'>By Nans Gigan</div>-->
+	</div>
+
+</document>

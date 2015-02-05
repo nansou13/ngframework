@@ -1,0 +1,47 @@
+<? xml version = "1.0" encoding = "iso-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<document xmlns="http://www.w3.org/1999/xhtml" xmlns:ng="http://www.gigan.fr/" lang="fr" xml:lang="fr">
+    <body>
+dfsgkgjsd lksdqj flqksfj
+		<fieldset>
+			<div class="col-sm-4">
+				<div class="box">
+					<div class="lead">
+						<i class="icon-info-sign text-contrast"></i>
+						Pi&amp;egrave;ces Interieurs
+					</div>
+
+				</div>
+			</div>
+			<div class="col-sm-7 col-sm-offset-1">
+				<div class="form-group">
+					<label>Nom :</label>
+					<input type="text" class="form-control" name="piece_nom" id="piece_nom"/>
+				</div>
+				<div class="form-group">
+					<label>Surface :</label>
+					<input type="text" class="form-control" name="piece_surface" id="piece_surface"/>
+				</div>
+				<div class="form-group">
+					<label>Orientation :</label>
+					<input type="text" class="form-control" name="piece_orientation" id="piece_orientation"/>
+				</div>
+				<div class="form-group">
+					<label>Sol/Mur :</label>
+					<input type="text" class="form-control" name="piece_solmur" id="piece_solmur"/>
+				</div>
+				<div class="form-group">
+					<label>Note :</label>
+					<input type="text" class="form-control" name="piece_note" id="piece_note"/>
+				</div>
+				<div class="btn btn-success btn-lg" id="btnValidPiece">
+					<i class="icon-save"></i>
+					Enregistrer
+				</div>
+
+
+			</div>
+
+		</fieldset>
+	</body>
+</document>

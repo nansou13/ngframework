@@ -1,0 +1,53 @@
+<script src="/data/ckeditor/ckeditor.js"></script><div id="panelAdmin">
+<?php
+
+echo NgGadget::factory("adminMenu")->display();
+?>
+<div class="widget stacked"><div class="widget-header"><i class="icon-bookmark"></i><h3>Administration</h3></div><div class="step2"><form method="POST" id="formStep2"><div class="widget-content"><div class="stepDesc"><fieldset><div class="col-sm-11 col-sm-offset-1"><div class="box"><div class="lead"><i class="icon-info-sign text-contrast"></i>
+                                                Information de l'article
+                                            </div></div></div><div class="col-sm-11 col-sm-offset-1"><input type="hidden" class="form-control" value="<?php echo $blogInfo->id;?>" name="idblog" id="idblog"/><div class="form-group"><label>Titre :</label><input type="text" class="form-control" value="<?php echo $blogInfo->title;?>" name="title" id="title"/></div><div class="form-group"><label>Description :</label><textarea class="form-control ckeditor" name="description" id="description" placeholder="Renseignez les informations..." rows="4"><?php echo $blogInfo->content;?></textarea></div><div class="form-group"><label>Categorie :</label><select class="form-control" id="categblog" name="categblog">
+<?php
+
+foreach ($listCateg as $categorieBlog->index => $categorieBlog->current) {
+?>
+<option value="<?php echo $categorieBlog->current->id;?>"><?php echo $categorieBlog->current->name;?></option>
+<?php
+
+}
+
+?>
+</select></div></div></fieldset><fieldset><style>
+                                    <?php echo $css;?>
+                                </style><div class="col-sm-4"><div class="box"><div class="lead"><i class="icon-info-sign text-contrast"></i>
+                                                Photos du produit
+                                            </div><small class="text-muted" id="contentImg">Selectionnez une zone.</small><div><span id="btnSuccessPhoto" class="btn btn-success disabled fileinput-button"><i class="icon-plus icon-white"></i><span> Ajouter une photo</span><input id="fileupload" type="file" name="files" multiple=""/></span><span class="deleteIMG btn-danger btn disabled" rel="" style="font-size: 18px; margin-left: 5px;"><i class="icon-trash"></i></span><br/><br/><img src="/LD/IM/globals/ajax_loader.gif" class="hidden" id="progressBarPhoto"/></div></div></div><div class="col-sm-7 col-sm-offset-1"><div class="form-group"><div class="row">
+<?php
+
+for ($i="1" ; $i<=$nbrPhoto; $i++) {
+?>
+
+<?php
+
+if ($i<10) {
+?>
+<div class="col-sm-3 imgMandat" id="mini-0<?php echo $i;?>"><img src="http://blog.immextenso.fr/LD/IM/globals/blogimg/<?php echo $blogInfo->id;?>/mini/0<?php echo $i;?>.jpg"/></div>
+<?php
+
+}else{
+?>
+<div class="col-sm-3 imgMandat" id="mini-<?php echo $i;?>"><img src="http://blog.immextenso.fr/LD/IM/globals/blogimg/<?php echo $blogInfo->id;?>/mini/<?php echo $i;?>.jpg"/></div>
+<?php
+
+}
+
+?>
+
+<?php
+
+}
+
+?>
+<div class="col-sm-3 addImgDiv" id="addImgPict"><i class="icon-plus-sign"></i></div></div></div></div></fieldset></div><div class="form-actions"><div class="row"><div class="col-sm-7 col-sm-offset-5"><div class="btn btn-primary btn-lg"><i class="icon-save"></i>
+                                            Save
+                                        </div></div></div></div></div></form></div><div class="step3"><div class="widget-content"><fieldset><i class="icon-ok-sign"></i>
+                            Modification effectu&eacute;e<br/><a href="/blog/list/" style="font-size: 14px;">retour au listing</a></fieldset></div></div></div></div>

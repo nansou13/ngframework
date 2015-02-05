@@ -1,0 +1,9 @@
+<div id="panelAdmin">
+<?php
+
+echo NgGadget::factory("adminMenu")->display();
+?>
+<div class="widget stacked"><div class="widget-header"><i class="icon-bookmark"></i><h3>Suppression</h3></div><div class="step3"><div class="widget-content"><fieldset><input type="hidden" value="<?php echo $productInfo->id;?>" id="idMandat"/><i class="icon-trash"></i>
+							Etes-vous s&ucirc;r de vouloir supprimer <?php echo $productInfo->mandat;?> ?<br/><button style="margin-bottom:5px" class="btn btn-contrast"><i class="icon-trash"></i>
+								Oui
+							</button></fieldset></div></div></div></div>

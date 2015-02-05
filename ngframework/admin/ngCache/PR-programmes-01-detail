@@ -1,0 +1,152 @@
+<link rel="stylesheet" href="/data/flexslider.css" type="text/css" media="screen"/><script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&language=fr"></script><div class="" id="contentSite">
+<?php
+
+echo NgGadget::factory("header")->display();
+?>
+
+<?php
+
+echo NgGadget::factory("header", array("typeHeader"=>"client"))->display();
+?>
+<div class="contentstep step1"><div style="position: relative; margin-left:-20px;"><img width="1000" src="/LD/IM/globals/neufimg/<?php echo $productInfo->id;?>/01.jpg"/></div><div class="titleContentBloc"><div class="titleH1"><h1><?php echo $productInfo->nom;?></h1></div></div><div style="margin-top: 20px;"><div style="float: left; margin-right: 220px;"><div class="" style="height: 27px;line-height: 27px;vertical-align: middle;"><img src="/LD/IM/globals/localisation1.png" style="float: left;margin-right: 10px;width: 15px;"/>
+	<?php echo $productInfo->ville;?> - <?php echo $productInfo->quartier;?>
+</div><div style="margin-top:5px; height: 22px; line-height: 22px; vertical-align: middle;"><img src="/LD/IM/globals/cle.png" style="width: 20px; float: left; margin-right: 6px;"/> <?php echo $productInfo->date_livraison;?>
+</div><div style="margin-top:5px; height: 23px; line-height: 23px; vertical-align: middle;"><img src="/LD/IM/globals/maison.png" style="width: 20px; float: left; margin-right: 6px;"/>
+	<?php echo $productInfo->nbre_lot;?> Appartements restants</div><div style="margin-top:5px; height: 19px; line-height: 19px; vertical-align: middle;"><img src="/LD/IM/globals/apn.png" style="width: 22px; float: left; margin-right: 6px;"/>
+	+ d'images
+</div><div style="font-size: 17px;font-weight: bold;height: 27px;line-height: 27px;vertical-align: middle;"><img src="/LD/IM/globals/euro.png" style="width: 20px; float: left; margin-right: 6px;"/>A partir de : <?php echo $productInfo->prix;?> &euro;</div></div><div><div style="margin-bottom: 20px;">Promoteur : <?php echo $productInfo->promoteur;?></div><div class="infobiendesc">
+
+                            <?php echo nl2br($productInfo->description);?>
+                        </div></div></div></div><div class="contentstep step2"><div style="position: relative; margin-left:-20px;"><img width="1000" src="/LD/IM/globals/neufimg/<?php echo $productInfo->id;?>/01.jpg"/></div><div class="titleContentBloc"><div class="titleH1"><h1><?php echo $productInfo->nom;?></h1></div></div><div style="margin-top: 20px;"><table id="lots"><tbody><tr><th>Lot</th><th>Type</th><th>Etage</th><th>Surface</th><th>Terrasse</th><th>Prix</th><th>Plan</th></tr>
+<?php
+
+foreach ($listeLot as $lot->index => $lot->current) {
+?>
+<tr><td><?php echo $lot->current->nom;?></td><td><?php echo $lot->current->type;?></td><td><?php echo $lot->current->etage;?></td><td><?php echo $lot->current->surface;?> m<sup>2</sup></td><td><?php echo $lot->current->terasse;?> m<sup>2</sup></td><td><?php echo $lot->current->prix;?>&euro;</td><td>
+<?php
+
+if ($lot->current->pdf=='none') {
+?>
+
+										-
+									
+<?php
+
+}else{
+?>
+<a target="_blank" href="<?php echo $lot->current->pdf;?>"><img src="/LD/IM/globals/page_white_acrobat.png"/>t&eacute;l&eacute;charger le plan</a>
+<?php
+
+}
+
+?>
+</td></tr>
+<?php
+
+}
+
+?>
+</tbody></table></div></div><div class="contentstep step3"><div style="display: block; margin-left: -20px; margin-right: -20px;"><div id="slider" class=""><ul class="slides">
+<?php
+
+for ($i="1" ; $i<=$nbrPhoto; $i++) {
+?>
+<li>
+<?php
+
+if ($i<10) {
+?>
+<div class="imgslide"><img src="/LD/IM/globals/neufimg/<?php echo $productInfo->id;?>/0<?php echo $i;?>.jpg"/></div>
+<?php
+
+}else{
+?>
+<div class="imgslide"><img src="/LD/IM/globals/neufimg/<?php echo $productInfo->id;?>/<?php echo $i;?>.jpg"/></div>
+<?php
+
+}
+
+?>
+</li>
+<?php
+
+}
+
+?>
+</ul></div></div><div class="titleContentBloc"><div class="titleH1"><h1><?php echo $productInfo->nom;?></h1></div></div><div style="margin-top: 20px;"><div style="position:relative" class="component_117" id="testCarousel"><div class="clear"></div><div id="testCarousel-s" style="margin: auto !important;" class="component_175 movie_slider flexslider noborder"><ul id="movie" class="slides nopadding">
+<?php
+
+for ($i="1" ; $i<=$nbrPhoto; $i++) {
+?>
+<li>
+<?php
+
+if ($i<10) {
+?>
+<img src="/LD/IM/globals/neufimg/<?php echo $productInfo->id;?>/mini/0<?php echo $i;?>.jpg"/>
+<?php
+
+}else{
+?>
+<img src="/LD/IM/globals/neufimg/<?php echo $productInfo->id;?>/mini/<?php echo $i;?>.jpg"/>
+<?php
+
+}
+
+?>
+</li>
+<?php
+
+}
+
+?>
+</ul></div></div></div></div><div class="contentstep step4"><div style="position: relative; margin-left:-20px;"><img width="1000" src="/LD/IM/globals/neufimg/<?php echo $productInfo->id;?>/01.jpg"/></div><div class="titleContentBloc"><div class="titleH1"><h1><?php echo $productInfo->nom;?></h1></div></div><div style="margin-top: 20px;"><div class="detailBienBloc" style="width: 900px;"><h3>Google Map</h3><div style="height:350px;width:870px; position: relative"><div id="map-canvas" style="height:100%;width:100%"></div></div></div></div></div><div class="contentstep step5"><div style="margin-top: 20px;"><div class="widget-content"><fieldset><div class="col-sm-4"><div class="box"><div class="lead"><i class="icon-info-sign text-contrast"></i>
+										Contactez nous
+									</div></div></div><div class="col-sm-7 col-sm-offset-1"><div class="form-group"><label>Nom :</label><input type="text" class="form-control" name="nom" id="nom"/></div><div class="form-group"><label>Mail :</label><input type="text" class="form-control" name="mail" id="mail"/></div><div class="form-group"><label>T&eacute;l&eacute;phone :</label><input type="text" class="form-control" name="tel" id="tel"/></div><div class="form-group"><label>Message :</label><textarea class="form-control" name="description" id="description" placeholder="" rows="4"></textarea></div></div></fieldset><hr class="hr-normal"/><div class="form-actions"><div class="row"><div class="col-sm-7 col-sm-offset-5"><div class="btn btn-primary btn-lg"><i class="icon-envelope-alt"></i>
+										Envoyer
+									</div></div></div></div></div></div></div></div><input type="hidden" id="mandatID" value="<?php echo $productInfo->id;?>"/><input type="hidden" id="mapAdress" value="<?php echo $productInfo->adresse;?>"/><script>
+			var geocoder;
+			var map;
+			// initialisation de la carte Google Map de départ
+			function initialiserCarte(adress) {
+
+				geocoder = new google.maps.Geocoder();
+				// Ici j'ai mis la latitude et longitude du vieux Port de Marseille pour centrer la carte de depart
+				var latlng = new google.maps.LatLng(43.295309, 5.374457);
+				var mapOptions = {
+					zoom: 15,
+					center: latlng,
+					disableDefaultUI: true,
+					mapTypeId: google.maps.MapTypeId.ROADMAP
+				}
+				// map-canvas est le conteneur HTML de la carte Google Map
+				map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+				TrouverAdresse(adress);
+			}
+
+			function TrouverAdresse(adress) {
+
+				// Récupération de l'adresse tapee dans le formulaire
+				var adresse = adress;
+				geocoder.geocode({'address': adresse}, function(results, status) {
+					if (status == google.maps.GeocoderStatus.OK) {
+						map.setCenter(results[0].geometry.location);
+						// Récupération des coordonnees GPS du lieu tape dans le formulaire
+						var strposition = results[0].geometry.location + "";
+						strposition = strposition.replace('(', '');
+						strposition = strposition.replace(')', '');
+
+						// Création du marqueur du lieu (épingle)
+						var marker = new google.maps.Marker({
+							map: map,
+							position: results[0].geometry.location
+						});
+						
+					} else {
+						alert('Adresse introuvable: ' + status);
+					}
+				});
+			}
+
+			
+		</script>

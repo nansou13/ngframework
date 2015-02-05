@@ -1,0 +1,23 @@
+
+  #footer {
+  color: #aaaaaa;
+  text-shadow: 1px 1px 1px white;
+  text-align: center;
+  border-top: 1px solid #eeeeee; }
+  #footer .footer-wrapper {
+    border-top: 1px solid white;
+    padding: 10px 0; }
+  #footer a {
+    color: #3c3c3c; }
+  #footer .text {
+    margin-bottom: 7px; }
+    @media (min-width: 768px) {
+      #footer .text {
+        text-align: left;
+        padding-top: 7px;
+        margin-bottom: 0; } }
+  @media (min-width: 768px) {
+    #footer .buttons {
+      text-align: right; } }
+  #footer .buttons .btn:last-child {
+    padding-right: 0; }

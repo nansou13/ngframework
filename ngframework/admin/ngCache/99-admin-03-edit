@@ -1,0 +1,88 @@
+<script src="/data/ckeditor/ckeditor.js"></script><div id="panelAdmin">
+<?php
+
+echo NgGadget::factory("adminMenu")->display();
+?>
+<div class="widget stacked"><div class="widget-header"><i class="icon-bookmark"></i><h3>Administration</h3></div><div class="step2"><form method="POST" id="formStep2"><div class="widget-content"><div class="span6" style="margin-bottom: 30px;"><ul class="nav nav-tabs"><li class="active"><a rel="stepDesc" href="#">Descriptions</a></li><li><a href="#" rel="stepImg">Images</a></li><li><a href="#" rel="stepLot">Lots</a></li></ul></div><div class="stepDesc"><fieldset><div class="col-sm-11 col-sm-offset-1"><div class="box"><div class="lead"><i class="icon-info-sign text-contrast"></i>
+                                                Information du produit
+                                            </div><small class="text-muted">Veuillez renseigner les divers informations sur le produit que vous souhaitez ajouter dans votre catalogue.</small></div></div><div class="col-sm-11 col-sm-offset-1"><input type="hidden" class="form-control" value="<?php echo $productInfo->id;?>" name="mandat2" id="mandat2"/><input type="hidden" class="form-control" value="TEST" name="identifiant" id="identifiant"/><div class="form-group"><label>Nom :</label><input type="text" class="form-control" value="<?php echo $productInfo->nom;?>" name="nom" id="nom"/></div><div class="form-group"><label>A partir de :</label><div class="row"><div class="col-sm-4"><div class="input-group"><span class="input-group-addon">
+                                                            &euro;
+                                                        </span><input type="text" class="form-control input-lg text-right" name="prix" id="prix" value="<?php echo $productInfo->prix;?>"/></div></div></div></div><div class="form-group"><label>Ville :</label><input type="text" class="form-control" value="<?php echo $productInfo->ville;?>" name="ville" id="ville"/></div><div class="form-group"><label>Quartier :</label><input type="text" class="form-control" value="<?php echo $productInfo->quartier;?>" name="quartier" id="quartier"/></div><div class="form-group"><label>Description :</label><textarea class="form-control ckeditor" name="description" id="description" placeholder="Renseignez les informations qui s'afficheront dans la fiche du produit" rows="4"><?php echo $productInfo->description;?></textarea></div><div class="form-group"><label>Date de livraison :</label><input type="text" class="form-control" value="<?php echo $productInfo->date_livraison;?>" name="date_livraison" id="date_livraison"/></div><div class="form-group"><label>Nb de lots :</label><input type="text" class="form-control" value="<?php echo $productInfo->nbre_lot;?>" name="nbre_lot" id="nbre_lot"/></div><div class="form-group"><label>Promoteur :</label><input type="text" class="form-control" value="<?php echo $productInfo->promoteur;?>" name="promoteur" id="promoteur"/></div><div class="form-group"><label>Adresse :</label><input type="text" class="form-control" value="<?php echo $productInfo->adresse;?>" name="adresse" id="adresse"/></div><div class="form-group"><label>online :</label>
+<?php
+
+if ($productInfo->online==1) {
+?>
+<input type="checkbox" name="online" checked="checked" id="online"/>
+<?php
+
+}else{
+?>
+<input type="checkbox" name="online" id="online"/>
+<?php
+
+}
+
+?>
+</div></div></fieldset></div><div class="stepImg"><style>
+                                    <?php echo $css;?>
+                                </style><fieldset><div class="col-sm-4"><div class="box"><div class="lead"><i class="icon-info-sign text-contrast"></i>
+                                                Photos du produit
+                                            </div><small class="text-muted" id="contentImg">Selectionnez une zone.</small><div><span id="btnSuccessPhoto" class="btn btn-success disabled fileinput-button"><i class="icon-plus icon-white"></i><span> Ajouter une photo</span><input id="fileupload" type="file" name="files" multiple=""/></span><span class="deleteIMG btn-danger btn disabled" rel="" style="font-size: 18px; margin-left: 5px;"><i class="icon-trash"></i></span><br/><br/><img src="/LD/IM/globals/ajax_loader.gif" class="hidden" id="progressBarPhoto"/></div></div></div><div class="col-sm-7 col-sm-offset-1"><div class="form-group"><div class="row">
+<?php
+
+for ($i="1" ; $i<=$nbrPhoto; $i++) {
+?>
+
+<?php
+
+if ($i<10) {
+?>
+<div class="col-sm-3 imgMandat" id="mini-0<?php echo $i;?>"><img src="/LD/IM/globals/neufimg/<?php echo $productInfo->id;?>/mini/0<?php echo $i;?>.jpg"/></div>
+<?php
+
+}else{
+?>
+<div class="col-sm-3 imgMandat" id="mini-<?php echo $i;?>"><img src="/LD/IM/globals/neufimg/<?php echo $productInfo->id;?>/mini/<?php echo $i;?>.jpg"/></div>
+<?php
+
+}
+
+?>
+
+<?php
+
+}
+
+?>
+<div class="col-sm-3 addImgDiv" id="addImgPict"><i class="icon-plus-sign"></i></div></div></div></div></fieldset></div><div class="stepLot"><fieldset><div class="col-sm-3"><div class="box"><div class="lead"><i class="icon-info-sign text-contrast"></i>
+                                                Lots
+                                            </div></div></div><div class="col-sm-3 col-sm-offset-1"><div class="form-group"><label>Nom :</label><input type="text" class="form-control" name="lot_nom" id="lot_nom"/></div><div class="form-group"><label>Etage :</label><input type="text" class="form-control" name="lot_etage" id="lot_etage"/></div><div class="form-group"><label>Terrasse :</label><input type="text" class="form-control" name="lot_terasse" id="lot_terasse"/></div><div class="form-group"><div class="btn btn-default fileinput-button disabled" id="btnValidPiece"><i class="icon-plus"></i>
+                                            Ajouter PDF
+<input type="file" multiple="" name="files" id="fileuploadLot"/></div><span id="messageLotOK" style="position: absolute; width: 320px; padding-top: 10px; padding-left: 5px;"></span></div></div><div class="col-sm-3 col-sm-offset-1"><div class="form-group"><label>Type :</label><input type="text" class="form-control" name="lot_type" id="lot_type"/></div><div class="form-group"><label>Surface :</label><input type="text" class="form-control" name="lot_surface" id="lot_surface"/></div><div class="form-group"><label>Prix :</label><input type="text" class="form-control" name="lot_prix" id="lot_prix"/></div></div><div class="btn btn-success btn-lg col-sm-3 col-sm-offset-6" id="btnValidLot"><i class="icon-save"></i>
+                                            Enregistrer
+                                    </div><div class="toto" style="display: block; clear: both; padding-top: 30px;"><table id="lots"><tbody><tr><th>Lot</th><th>Type</th><th>Etage</th><th>Surface</th><th>Terrasse</th><th>Prix</th><th>supprimer</th></tr>
+<?php
+
+if (count($listeLot)>0) {
+?>
+
+<?php
+
+foreach ($listeLot as $lot->index => $lot->current) {
+?>
+<tr class="contentPiece" id="idp-<?php echo $lot->current->id;?>"><td><?php echo $lot->current->nom;?></td><td><?php echo $lot->current->type;?></td><td><?php echo $lot->current->etage;?></td><td><?php echo $lot->current->surface;?> m<sup>2</sup></td><td><?php echo $lot->current->terasse;?> m<sup>2</sup></td><td><?php echo $lot->current->prix;?>&euro;</td><td><a class="icon-trash-a" href="#"><i class="icon-trash"></i></a></td></tr>
+<?php
+
+}
+
+?>
+
+<?php
+
+}
+
+?>
+</tbody></table></div></fieldset><hr class="hr-normal"/></div><div class="form-actions"><div class="row"><div class="col-sm-7 col-sm-offset-5"><div class="btn btn-primary btn-lg"><i class="icon-save"></i>
+                                            Save
+                                        </div></div></div></div></div></form></div><div class="step3"><div class="widget-content"><fieldset><i class="icon-ok-sign"></i>
+                            Modification effectu&eacute;e<br/><a href="/admin/list/" style="font-size: 14px;">retour au listing</a></fieldset></div></div></div></div>

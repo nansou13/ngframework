@@ -1,0 +1,1 @@
+<div id="footer"><h4>PHARO IMMO MARSEILLE</h4><div class="tinyText">&copy; 2013 | Tous droits r&eacute;serv&eacute;s | Plan du site</div></div>
